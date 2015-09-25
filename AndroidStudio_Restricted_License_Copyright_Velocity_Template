@@ -1,0 +1,20 @@
+This file '$file.fileName' is part of $project.name : 
+
+Created by Andrew Chelladurai - TheUnknownAndrew[at]GMail[dot]com
+on $today.format("E, dd MMM yyyy HH:mm:ss z")
+ 
+Copyright (c) $today.year.
+
+This Application is available at location
+https://play.google.com/store/apps/developer?id=Andrew+Chelladurai
+
+This program IS NOT free software: you CAN NOT redistribute it and/or modify
+it under any terms.
+
+Additionally by using this software and/or Application you acknowledge that:
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+You should have received a copy of this license in some form,
+if not please write to Andrew Chelladurai - TheUnknownAndrew[at]GMail[dot]com.
