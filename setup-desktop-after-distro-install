@@ -16,6 +16,8 @@ sudo adduser andrew kvm && sudo adduser andrew libvirtd
 
 startup parameters : -qemu -m 2047 -enable-kvm
 
+touch /etc/modprobe.d/rtl8723be.conf >> options rtl8723be fwlps=0
+
 =========================================
 Elementary OS Specific
 =========================================
@@ -38,4 +40,5 @@ sudo reboot
 alias aptclean="sudo apt-get autoclean && sudo apt-get autoremove"
 alias aptupgradesys="sudo apt-get update && sudo apt-get upgrade"
 alias aptsearch='apt-cache search'
+alias startICSavd='~/.tools/android-sdk-linux/tools/emulator64-x86 -avd ICS_API_15_Nexus_S -qemu -m 2047 -enable-kvm'
 
