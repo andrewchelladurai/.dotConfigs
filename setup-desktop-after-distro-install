@@ -1,44 +1,42 @@
 =========================================
-For Ubuntu Based Distros
+For Ubuntu Based Distros (KDE Specific)
 =========================================
 
+# This is for Google Chrome
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
+# This is for Java
 sudo add-apt-repository ppa:webupd8team/java
 sudo dpkg --add-architecture i386
-sudo apt-get update
 
-sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils ubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman mysql-client mysql-server mysql-workbench yakuake filelight kget rekonq digikam gimp google-chrome-stable
+# This is for Enpass.io (Password manager)
+sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" >> /etc/apt/sources.list.d/enpass.list'
+wget -O - http://repo.sinew.in/keys/enpass-linux.key | sudo apt-key add -
+
+# This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
+sudo sh -c 'echo "options rtl8723be fwlps=0" >> /etc/modprobe.d/rtl8723be.conf'
+
+# Alias for frequently used commands
+alias upgradesys='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+alias fastboot='sudo ~/.tools/android-sdk-linux/platform-tools/fastboot'
+alias adb='sudo ~/.tools/android-sdk-linux/platform-tools/adb'
+
+# Update + Upgrade the system
+upgradesys
+
+# Install necessary apps
+sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman mysql-client mysql-server mysql-workbench filelight gimp google-chrome-stable yakuake enpass
 
 # For Android AVD emulation performance
 sudo adduser andrew kvm && sudo adduser andrew libvirtd
 
-startup parameters : -qemu -m 2047 -enable-kvm
-
-touch /etc/modprobe.d/rtl8723be.conf >> options rtl8723be fwlps=0
+# This is the Android AVD startup parameters (No longer required though) : -qemu -m 2047 -enable-kvm
 
 =========================================
 Elementary OS Specific
 =========================================
 
-sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily
-sudo apt-get install elementary-tweaks
-
 sudo apt-get install mesa-utils && sudo mkdir /etc/X11/xorg.conf.d/
 echo -e 'Section "Device"\n Identifier "Intel Graphics"\n Driver "Intel"\n Option "AccelMethod" "sna"\n Option "TearFree" "true"\nEndSection' | sudo tee /etc/X11/xorg.conf.d/20-intel.conf
 sudo reboot
-
-=========================================
-.bashrc file modifications for common aliases
-=========================================
-
-#
-# MODIFICATIONS FOLLOW THIS LINE
-#
-
-alias aptclean="sudo apt-get autoclean && sudo apt-get autoremove"
-alias aptupgradesys="sudo apt-get update && sudo apt-get upgrade"
-alias aptsearch='apt-cache search'
-alias startICSavd='~/.tools/android-sdk-linux/tools/emulator64-x86 -avd ICS_API_15_Nexus_S -qemu -m 2047 -enable-kvm'
-
