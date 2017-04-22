@@ -1,7 +1,13 @@
-=========================================
+# =========================================
 For Ubuntu Based Distros (KDE Specific)
 Preferred Distro : KDE Neon / KaOS / Arch running LXQT
-=========================================
+# =========================================
+
+# Remove all the unnecesary packages before you start to avoid downloading their updates.
+
+
+# This is so that PPA repositories can be installed
+sudo apt install software-properties-common
 
 # This is for Google Chrome
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -37,10 +43,11 @@ Enter "rfkill block bluetooth" in "/etc/rc.local"
 
 # This is the Android AVD startup parameters (No longer required though) : -qemu -m 2047 -enable-kvm
 
-=========================================
+# =========================================
 Elementary OS Specific
-=========================================
+# =========================================
 
 sudo apt-get install mesa-utils && sudo mkdir /etc/X11/xorg.conf.d/
 echo -e 'Section "Device"\n Identifier "Intel Graphics"\n Driver "Intel"\n Option "AccelMethod" "sna"\n Option "TearFree" "true"\nEndSection' | sudo tee /etc/X11/xorg.conf.d/20-intel.conf
 sudo reboot
+
