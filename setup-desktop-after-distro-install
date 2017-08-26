@@ -33,7 +33,7 @@ alias adb='sudo ~/.tools/android-sdk-linux/platform-tools/adb'
 upgradesys
 
 # Install necessary apps
-sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman mysql-client mysql-server mysql-workbench filelight gimp google-chrome-stable yakuake enpass
+sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman filelight gimp google-chrome-stable yakuake enpass redshift krita inkscape
 
 # For Android AVD emulation performance
 sudo adduser andrew kvm && sudo adduser andrew libvirtd
@@ -41,7 +41,14 @@ sudo adduser andrew kvm && sudo adduser andrew libvirtd
 # Disable Bluetooth Auto-Start
 Enter "rfkill block bluetooth" in "/etc/rc.local" 
 
-# This is the Android AVD startup parameters (No longer required though) : -qemu -m 2047 -enable-kvm
+# Make links to actual content directories in a separate partition
+rmdir Documents/ Downloads/ Pictures/ Videos/ Music/
+ln -s /media/andrew/Data/Documents/ Documents
+ln -s /media/andrew/Data/Downloads/ Downloads
+ln -s /media/andrew/Data/Music/ Music
+ln -s /media/andrew/Data/Pictures/ Pictures
+ln -s /media/andrew/Data/Movies/ Videos
+ln -s /media/andrew/Data/Volatile/ Volatile
 
 # =========================================
 Elementary OS Specific
