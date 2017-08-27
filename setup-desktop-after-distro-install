@@ -21,6 +21,10 @@ sudo dpkg --add-architecture i386
 sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" >> /etc/apt/sources.list.d/enpass.list'
 wget -O - http://repo.sinew.in/keys/enpass-linux.key | sudo apt-key add -
 
+# This is for the Google Play Music Desktop Player
+wget -qO - https://gpmdp.xyz/bintray-public.key.asc | sudo apt-key add -
+echo "deb https://dl.bintray.com/marshallofsound/deb debian main" | sudo tee -a /etc/apt/sources.list.d/gpmdp.list
+
 # This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
 sudo sh -c 'echo "options rtl8723be fwlps=0" >> /etc/modprobe.d/rtl8723be.conf'
 
@@ -29,11 +33,14 @@ alias upgradesys='sudo apt update && sudo apt upgrade -y && sudo apt autoremove 
 alias fastboot='sudo ~/.tools/android-sdk-linux/platform-tools/fastboot'
 alias adb='sudo ~/.tools/android-sdk-linux/platform-tools/adb'
 
+alias restartNMW='sudo systemctl restart network-manager'
+alias restartNMCli='nmcli networking off ; sleep 10 ; nmcli networking on'
+
 # Update + Upgrade the system
 upgradesys
 
 # Install necessary apps
-sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman filelight gimp google-chrome-stable yakuake enpass redshift krita inkscape
+sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman filelight gimp google-chrome-stable yakuake enpass redshift krita inkscape kate google-play-music-desktop-player
 
 # For Android AVD emulation performance
 sudo adduser andrew kvm && sudo adduser andrew libvirtd
