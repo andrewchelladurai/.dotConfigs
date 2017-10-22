@@ -46,6 +46,9 @@ alias restartNMCli='nmcli networking off ; sleep 10 ; nmcli networking on'
 # Update + Upgrade the system
 upgradesys
 
+# Download and Install the Unified Remote Server
+wget https://www.unifiedremote.com/download/linux-x64-deb ; sudo apt install linux-x64-deb ; sudo apt-get install -f
+
 # Install necessary apps
 sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman filelight gimp google-chrome-stable yakuake enpass redshift krita inkscape kate
 
