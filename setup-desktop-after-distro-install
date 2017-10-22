@@ -36,7 +36,7 @@ alias restartNMCli='nmcli networking off ; sleep 10 ; nmcli networking on'
 upgradesys
 
 # Install necessary apps
-sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman filelight gimp google-chrome-stable yakuake enpass redshift krita inkscape kate google-play-music-desktop-player
+sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman filelight gimp google-chrome-stable yakuake enpass redshift krita inkscape kate
 
 # For Android AVD emulation performance
 sudo adduser andrew kvm && sudo adduser andrew libvirtd
