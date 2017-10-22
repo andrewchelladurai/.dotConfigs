@@ -5,6 +5,14 @@ Preferred Distro : KDE Neon / KaOS / Arch running LXQT
 
 # Remove all the unnecesary packages before you start to avoid downloading their updates.
 
+# Make links to actual content directories in a separate partition
+rmdir Documents/ Downloads/ Pictures/ Videos/ Music/
+ln -s /media/andrew/Data/Documents/ Documents
+ln -s /media/andrew/Data/Downloads/ Downloads
+ln -s /media/andrew/Data/Music/ Music
+ln -s /media/andrew/Data/Pictures/ Pictures
+ln -s /media/andrew/Data/Movies/ Videos
+ln -s /media/andrew/Data/Volatile/ Volatile
 
 # This is so that PPA repositories can be installed
 sudo apt install software-properties-common
@@ -24,6 +32,9 @@ wget -O - http://repo.sinew.in/keys/enpass-linux.key | sudo apt-key add -
 # This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
 sudo sh -c 'echo "options rtl8723be fwlps=0 swlps=0 ips=0 ant_sel=1" >> /etc/modprobe.d/rtl8723be.conf'
 
+# Disable Bluetooth Auto-Start
+Enter "rfkill block bluetooth" in "/etc/rc.local" 
+
 # Alias for frequently used commands
 alias upgradesys='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
 alias fastboot='sudo ~/.tools/android-sdk-linux/platform-tools/fastboot'
@@ -40,18 +51,6 @@ sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-res
 
 # For Android AVD emulation performance
 sudo adduser andrew kvm && sudo adduser andrew libvirtd
-
-# Disable Bluetooth Auto-Start
-Enter "rfkill block bluetooth" in "/etc/rc.local" 
-
-# Make links to actual content directories in a separate partition
-rmdir Documents/ Downloads/ Pictures/ Videos/ Music/
-ln -s /media/andrew/Data/Documents/ Documents
-ln -s /media/andrew/Data/Downloads/ Downloads
-ln -s /media/andrew/Data/Music/ Music
-ln -s /media/andrew/Data/Pictures/ Pictures
-ln -s /media/andrew/Data/Movies/ Videos
-ln -s /media/andrew/Data/Volatile/ Volatile
 
 # =========================================
 Elementary OS Specific
