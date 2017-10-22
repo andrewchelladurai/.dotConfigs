@@ -21,10 +21,6 @@ sudo dpkg --add-architecture i386
 sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" >> /etc/apt/sources.list.d/enpass.list'
 wget -O - http://repo.sinew.in/keys/enpass-linux.key | sudo apt-key add -
 
-# This is for the Google Play Music Desktop Player
-wget -qO - https://gpmdp.xyz/bintray-public.key.asc | sudo apt-key add -
-echo "deb https://dl.bintray.com/marshallofsound/deb debian main" | sudo tee -a /etc/apt/sources.list.d/gpmdp.list
-
 # This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
 sudo sh -c 'echo "options rtl8723be fwlps=0 swlps=0 ips=0 ant_sel=1" >> /etc/modprobe.d/rtl8723be.conf'
 
