@@ -7,12 +7,12 @@ Preferred Distro : KDE Neon / KaOS / Arch running LXQT
 
 # Make links to actual content directories in a separate partition
 rmdir Documents/ Downloads/ Pictures/ Videos/ Music/
-ln -s /media/andrew/Data/Documents/ Documents
-ln -s /media/andrew/Data/Downloads/ Downloads
-ln -s /media/andrew/Data/Music/ Music
-ln -s /media/andrew/Data/Pictures/ Pictures
-ln -s /media/andrew/Data/Movies/ Videos
-ln -s /media/andrew/Data/Volatile/ Volatile
+ln -s /media/$(whoami)/Data/Documents/ Documents
+ln -s /media/$(whoami)/Data/Downloads/ Downloads
+ln -s /media/$(whoami)/Data/Volatile/ Volatile
+ln -s /media/$(whoami)/Media/Music/ Music
+ln -s /media/$(whoami)/Media/Pictures/ Pictures
+ln -s /media/$(whoami)/Media/Movies/ Videos
 
 # This is so that PPA repositories can be installed
 sudo apt install software-properties-common
@@ -37,9 +37,6 @@ Enter "rfkill block bluetooth" in "/etc/rc.local"
 
 # Alias for frequently used commands
 alias upgradesys='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
-alias fastboot='sudo ~/.tools/android-sdk-linux/platform-tools/fastboot'
-alias adb='sudo ~/.tools/android-sdk-linux/platform-tools/adb'
-
 alias restartNMW='sudo systemctl restart network-manager'
 alias restartNMCli='nmcli networking off ; sleep 10 ; nmcli networking on'
 
@@ -50,8 +47,13 @@ upgradesys
 wget https://www.unifiedremote.com/download/linux-x64-deb ; sudo apt install linux-x64-deb ; sudo apt-get install -f
 
 # Install necessary apps
-sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman filelight gimp google-chrome-stable yakuake enpass redshift krita inkscape kate
+sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman filelight gimp google-chrome-stable yakuake enpass redshift krita inkscape kate digikam amarok libreoffice
 
 # For Android AVD emulation performance
-sudo adduser andrew kvm && sudo adduser andrew libvirtd
+sudo adduser $(whoami) kvm && sudo adduser $(whoami) libvirtd
 
+# For bug that shows the extra user on the login screen
+sudo usermod -u 999 libvirt-qemu
+
+# For manually mounting HDD's by label - Use this in the user profile if needed
+udisksctl mount -b /dev/disk/by-label/Data
