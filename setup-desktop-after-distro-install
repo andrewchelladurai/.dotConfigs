@@ -29,6 +29,25 @@ sudo dpkg --add-architecture i386
 sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" >> /etc/apt/sources.list.d/enpass.list'
 wget -O - http://repo.sinew.in/keys/enpass-linux.key | sudo apt-key add -
 
+# PPAs for Papirus Icon Pack : https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+sudo add-apt-repository ppa:papirus/papirus
+
+# For Hardcode Tray Icon Fixes : https://github.com/bilelmoussaoui/Hardcode-Tray
+sudo add-apt-repository ppa:andreas-angerer89/sni-qt-patched
+
+# Update + Upgrade the system
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+
+# Download and Install the Unified Remote Server
+wget https://www.unifiedremote.com/download/linux-x64-deb ; sudo apt install linux-x64-deb ; sudo apt-get install -f
+
+# Install necessary apps
+sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman filelight gimp google-chrome-stable yakuake enpass redshift krita inkscape kate digikam amarok libreoffice
+
+# Install Look and Feel related apps
+sudo apt install --install-recommends adapta-kde arc-kde
+sudo apt install -y sni-qt sni-qt:i386 hardcode-tray papirus-icon-theme
+
 # This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
 sudo sh -c 'echo "options rtl8723be fwlps=0 swlps=0 ips=0 ant_sel=1" >> /etc/modprobe.d/rtl8723be.conf'
 
@@ -40,14 +59,8 @@ alias upgradesys='sudo apt update && sudo apt upgrade -y && sudo apt autoremove 
 alias restartNMW='sudo systemctl restart network-manager'
 alias restartNMCli='nmcli networking off ; sleep 10 ; nmcli networking on'
 
-# Update + Upgrade the system
-upgradesys
-
-# Download and Install the Unified Remote Server
-wget https://www.unifiedremote.com/download/linux-x64-deb ; sudo apt install linux-x64-deb ; sudo apt-get install -f
-
-# Install necessary apps
-sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman filelight gimp google-chrome-stable yakuake enpass redshift krita inkscape kate digikam amarok libreoffice
+# Fix Hardcoded Icons using : https://github.com/Foggalong/hardcode-fixer
+wget https://raw.githubusercontent.com/Foggalong/hardcode-fixer/master/fix.sh ; sudo bash fix.sh
 
 # For Android AVD emulation performance
 sudo adduser $(whoami) kvm && sudo adduser $(whoami) libvirtd
@@ -55,5 +68,9 @@ sudo adduser $(whoami) kvm && sudo adduser $(whoami) libvirtd
 # For bug that shows the extra user on the login screen
 sudo usermod -u 999 libvirt-qemu
 
+# To fix Hardcoded System Tray Icons
+sudo -E hardcode-tray --conversion-tool RSVGConvert --size 22 --theme Papirus
+
 # For manually mounting HDD's by label - Use this in the user profile if needed
 udisksctl mount -b /dev/disk/by-label/Data
+
