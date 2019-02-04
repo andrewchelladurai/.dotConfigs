@@ -74,3 +74,22 @@ sudo -E hardcode-tray --conversion-tool RSVGConvert --size 22 --theme Papirus
 # For manually mounting HDD's by label - Use this in the user profile if needed
 udisksctl mount -b /dev/disk/by-label/Data
 
+##
+# The following lines are for setting up a Android phone after a reset / ROM flash
+# These set Secure privileges on applications.
+##
+
+# Give Greenify special rights to do it's magic
+# Restart Greenify once for the rights to take effect
+adb shell pm grant com.oasisfeng.greenify android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant com.oasisfeng.greenify android.permission.GET_APP_OPS_STATS
+adb shell pm grant com.oasisfeng.greenify android.permission.READ_LOGS
+adb shell pm grant com.oasisfeng.greenify android.permission.DUMP
+adb shell am force-stop com.oasisfeng.greenify
+
+# Give Tasker & AutoApps the rights it deserves and needs
+adb shell pm grant net.dinglisch.android.taskerm android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant com.joaomgcd.autotools android.permission.WRITE_SECURE_SETTINGS
+
+# Make XDA Navigation Gestures useful
+adb shell pm grant com.xda.nobar android.permission.WRITE_SECURE_SETTINGS
