@@ -15,7 +15,7 @@ ln -s /media/$(whoami)/Media/Pictures/ Pictures
 ln -s /media/$(whoami)/Media/Movies/ Videos
 
 # This is so that PPA repositories can be installed
-sudo apt install software-properties-common
+sudo apt install -y software-properties-common software-properties-kde
 
 # This is for Google Chrome
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -43,6 +43,9 @@ wget https://www.unifiedremote.com/download/linux-x64-deb ; sudo dpkg --install 
 
 # Install necessary apps
 sudo apt install -y ktorrent kompare netbeans qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable yakuake enpass redshift inkscape digikam amarok libreoffice
+
+# Install Proprietary Nvidia Drivers
+sudo ubuntu-drivers autoinstall
 
 # Install Look and Feel related apps
 sudo apt install --install-recommends adapta-kde arc-kde
