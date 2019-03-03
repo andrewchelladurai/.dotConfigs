@@ -42,7 +42,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 wget https://www.unifiedremote.com/download/linux-x64-deb ; sudo dpkg --install linux-x64-deb
 
 # Install necessary apps
-sudo apt install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite sqliteman filelight gimp google-chrome-stable yakuake enpass redshift krita inkscape kate digikam amarok libreoffice
+sudo apt install -y ktorrent kompare netbeans qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras oracle-java8-installer libncurses5:i386 libstdc++6:i386 zlib1g:i386 git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable yakuake enpass redshift inkscape digikam amarok libreoffice
 
 # Install Look and Feel related apps
 sudo apt install --install-recommends adapta-kde arc-kde
