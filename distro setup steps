@@ -5,6 +5,14 @@ Preferred Distro : KDE Neon / KaOS / Arch running LXQT
 
 # Remove all the unnecesary packages before you start to avoid downloading their updates.
 
+# Alias for frequently used commands
+# Add these to the ~/.bashrc for convenience
+alias upgradesys='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+alias restartNMW='sudo systemctl restart network-manager'
+alias restartNMCli='nmcli networking off ; sleep 10 ; nmcli networking on'
+alias kvmstop="sudo rmmod kvm_intel ; sudo rmmod kvm"
+alias kvmstart="sudo insmod /lib/modules/$(uname -r)/kernel/arch/x86/kvm/kvm.ko ; sudo insmod /lib/modules/$(uname -r)/kernel/arch/x86/kvm/kvm-intel.ko"
+
 # Make links to actual content directories in a separate partition
 rmdir Documents/ Downloads/ Pictures/ Videos/ Music/
 ln -s /media/$(whoami)/Data/Documents/ Documents
@@ -32,9 +40,6 @@ wget -O - http://repo.sinew.in/keys/enpass-linux.key | sudo apt-key add -
 # PPAs for Papirus Icon Pack : https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 sudo add-apt-repository ppa:papirus/papirus
 
-# For Hardcode Tray Icon Fixes : https://github.com/bilelmoussaoui/Hardcode-Tray
-sudo add-apt-repository ppa:andreas-angerer89/sni-qt-patched
-
 # Update + Upgrade the system
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
@@ -49,30 +54,15 @@ sudo ubuntu-drivers autoinstall
 
 # Install Look and Feel related apps
 sudo apt install --install-recommends adapta-kde arc-kde
-sudo apt install -y sni-qt sni-qt:i386 hardcode-tray papirus-icon-theme
 
 # This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
 sudo sh -c 'echo "options rtl8723be fwlps=0 swlps=0 ips=0 ant_sel=1" >> /etc/modprobe.d/rtl8723be.conf'
-
-# Disable Bluetooth Auto-Start
-Enter "rfkill block bluetooth" in "/etc/rc.local" 
-
-# Alias for frequently used commands
-alias upgradesys='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
-alias restartNMW='sudo systemctl restart network-manager'
-alias restartNMCli='nmcli networking off ; sleep 10 ; nmcli networking on'
-
-# Fix Hardcoded Icons using : https://github.com/Foggalong/hardcode-fixer
-wget https://raw.githubusercontent.com/Foggalong/hardcode-fixer/master/fix.sh ; sudo bash fix.sh
 
 # For Android AVD emulation performance
 sudo adduser $(whoami) kvm && sudo adduser $(whoami) libvirtd
 
 # For bug that shows the extra user on the login screen
 sudo usermod -u 999 libvirt-qemu
-
-# To fix Hardcoded System Tray Icons
-sudo -E hardcode-tray --conversion-tool RSVGConvert --size 22 --theme Papirus
 
 # For manually mounting HDD's by label - Use this in the user profile if needed
 udisksctl mount -b /dev/disk/by-label/Data
