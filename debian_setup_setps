@@ -4,11 +4,20 @@
 #
 
 # Convenient aliases for frequent commands
-# Add profile or shell rc file (my preference is bash)
-alias upgradesys='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+# Add to profile or shell rc file (my preference is bash)
+
+# system upgrade using aptitude (Debian specific)
+alias upgradesysapt='sudo apt update && sudo apt -y full-upgrade && sudo apt autoremove -y'
+# system upgrade using package consistency tool (KDE specific)
+alias upgradesyspkc='sudo pkcon refresh && sudo pkcon -y update && sudo apt autoremove -y'
+# restart networkmanager service using system control
 alias restartNMW='sudo systemctl restart network-manager'
+# restart networkmanager service using nm's own utility
 alias restartNMCli='nmcli networking off ; sleep 10 ; nmcli networking on'
+# LibVrt (VirtualBox Guests) and KVM (Android Emulators) conflict and do not run together.
+# Stop KVM emulation, by disabling the kernel module
 alias kvmstop="sudo rmmod kvm_intel ; sudo rmmod kvm"
+# Start KVM emulation, by enabling the kernel module
 alias kvmstart="sudo insmod /lib/modules/$(uname -r)/kernel/arch/x86/kvm/kvm.ko ; sudo insmod /lib/modules/$(uname -r)/kernel/arch/x86/kvm/kvm-intel.ko"
 
 # Now reload the  modifications
@@ -17,8 +26,9 @@ source ~/.bashrc
 # Remove all the unnecesary packages before you start a dist-upgrade,
 # this is to avoid downloading unnecessary updates.
 
-# Now upgrade the system
-upgradesys
+# Now upgrade the system using both options to be sure
+upgradesysapt
+upgradesyspkc
 
 # Make links to actual content directories in a separate partition
 # This is only required if the data partition is separate from the actual home mount
