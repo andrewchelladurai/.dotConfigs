@@ -15,5 +15,12 @@ adb shell am force-stop com.oasisfeng.greenify
 adb shell pm grant net.dinglisch.android.taskerm android.permission.WRITE_SECURE_SETTINGS
 adb shell pm grant com.joaomgcd.autotools android.permission.WRITE_SECURE_SETTINGS
 
+# Give Join Clipboard Permission on Android 10
+# https://joaoapps.com/AutoApps/Help/Info/com.joaomgcd.join/android_10_read_logs.html
+adb -d shell appops set com.joaomgcd.join SYSTEM_ALERT_WINDOW allow
+adb shell pm grant com.joaomgcd.join android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant com.joaomgcd.join android.permission.READ_LOGS
+adb shell am force-stop com.joaomgcd.join
+
 # Make XDA Navigation Gestures useful
 adb shell pm grant com.xda.nobar android.permission.WRITE_SECURE_SETTINGS
