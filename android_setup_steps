@@ -14,6 +14,7 @@ adb shell am force-stop com.oasisfeng.greenify
 # Give Tasker & AutoApps the rights it deserves and needs
 adb shell pm grant net.dinglisch.android.taskerm android.permission.WRITE_SECURE_SETTINGS
 adb shell pm grant com.joaomgcd.autotools android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant com.joaomgcd.autoinput android.permission.WRITE_SECURE_SETTINGS
 
 # Give Join Clipboard Permission on Android 10
 # https://joaoapps.com/AutoApps/Help/Info/com.joaomgcd.join/android_10_read_logs.html
