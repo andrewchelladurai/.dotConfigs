@@ -11,9 +11,15 @@ adb shell pm grant com.oasisfeng.greenify android.permission.READ_LOGS
 adb shell pm grant com.oasisfeng.greenify android.permission.DUMP
 adb shell am force-stop com.oasisfeng.greenify
 
-# Give Tasker & AutoApps the rights it deserves and needs
+# Give Tasker the rights it deserves and needs
 adb shell pm grant net.dinglisch.android.taskerm android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant net.dinglisch.android.taskerm android.permission.READ_LOGS
+
+# Give AutoApps the rights it deserves and needs
 adb shell pm grant com.joaomgcd.autotools android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant com.joaomgcd.autotools android.permission.READ_LOGS
+
+# Give AutoInput the rights it deserves and needs
 adb shell pm grant com.joaomgcd.autoinput android.permission.WRITE_SECURE_SETTINGS
 
 # Give Join Clipboard Permission on Android 10
