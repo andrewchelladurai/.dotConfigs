@@ -4,12 +4,10 @@
 #
 
 # Convenient aliases for frequent commands
-# Add to profile or shell rc file (my preference is bash)
+# Add to profile or shell rc file (prefer bash)
 
-# system upgrade using aptitude (Debian specific)
-alias upgradesysapt='sudo apt update && sudo apt -y full-upgrade && sudo apt autoremove -y'
 # system upgrade using package consistency tool (KDE specific)
-alias upgradesyspkc='sudo pkcon refresh && sudo pkcon -y update && sudo apt autoremove -y'
+alias upgradesys='sudo pkcon refresh && sudo pkcon -y update && sudo apt autoremove -y && sudo apt autoclean -y'
 # restart networkmanager service using system control
 alias restartNMW='sudo systemctl restart network-manager'
 # restart networkmanager service using nm's own utility
@@ -27,8 +25,7 @@ source ~/.bashrc
 # this is to avoid downloading unnecessary updates.
 
 # Now upgrade the system using both options to be sure
-upgradesysapt
-upgradesyspkc
+upgradesys
 
 # Make links to actual content directories in a separate partition
 # This is only required if the data partition is separate from the actual home mount
@@ -41,7 +38,7 @@ ln -s /media/$(whoami)/Media/Pictures/ Pictures
 ln -s /media/$(whoami)/Media/Movies/ Videos
 
 # For capability to add PPA repositories
-sudo apt install -y software-properties-common software-properties-kde
+sudo apt install -y software-properties-common software-properties-qt
 
 # PPA : Google Chrome
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -51,30 +48,17 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" >> /etc/apt/sources.list.d/enpass.list'
 wget -O - http://repo.sinew.in/keys/enpass-linux.key | sudo apt-key add -
 
-# PPA : Papirus Icon Pack : https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
-sudo add-apt-repository ppa:papirus/papirus
-
 # Download and Install Unified Remote Server
-wget https://www.unifiedremote.com/download/linux-x64-deb ; sudo dpkg --install linux-x64-deb
+wget https://www.unifiedremote.com/download/linux-x64-deb && sudo dpkg --install linux-x64-deb
 
 # Download and install Nordvpn
-wget https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
-dpkg -i nordvpn*.deb
-
-# PPA : Wireguard VPN Protocol (https://www.wireguard.com/install/#ubuntu-module-tools)
-sudo add-apt-repository ppa:wireguard/wireguard
-
-# Refresh sources list to reflect PPA additions
-upgradesys
+wget https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb && sudo dpkg -i nordvpn*.deb
 
 # Install necessary apps
-sudo apt install -y ktorrent kompare netbeans qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable yakuake enpass redshift inkscape digikam amarok libreoffice xserver-xorg-input-synaptics nordvpn wireguard
+sudo apt install -y ktorrent kompare qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam  libreoffice xserver-xorg-input-synaptics nordvpn wireguard
 
 # Install proprietary drivers
 sudo ubuntu-drivers autoinstall
-
-# Install Look and Feel related apps
-sudo apt install --install-recommends adapta-kde arc-kde
 
 # This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
 # have'nt observred WiFi drops for quite some time
@@ -82,7 +66,7 @@ sudo apt install --install-recommends adapta-kde arc-kde
 sudo sh -c 'echo "options rtl8723be fwlps=0 swlps=0 ips=0 ant_sel=1" >> /etc/modprobe.d/rtl8723be.conf'
 
 # For Android AVD emulation performance
-sudo adduser $(whoami) kvm && sudo adduser $(whoami) libvirtd
+sudo adduser $(whoami) kvm
 
 # For bug that shows the extra user on the login screen
 sudo usermod -u 999 libvirt-qemu
