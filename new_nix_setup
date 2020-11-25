@@ -59,7 +59,7 @@ wget https://www.unifiedremote.com/download/linux-x64-deb && sudo dpkg --install
 wget https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb && sudo dpkg -i nordvpn*.deb
 
 # Install necessary apps
-sudo apt install -y ktorrent kompare qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam  libreoffice xserver-xorg-input-synaptics nordvpn wireguard bashtop
+sudo apt install -y ktorrent kompare qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam  libreoffice xserver-xorg-input-synaptics nordvpn wireguard bashtop glances
 
 # Install proprietary drivers
 sudo ubuntu-drivers autoinstall
