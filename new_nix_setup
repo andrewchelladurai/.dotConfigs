@@ -62,6 +62,8 @@ wget https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0
 echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
 curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 
+# Download and install the latest release of ActivityWatch Timetracker
+https://github.com/ActivityWatch/activitywatch/releases
 
 # Install necessary apps
 sudo apt install -y ktorrent kompare qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam  libreoffice xserver-xorg-input-synaptics nordvpn wireguard bashtop glances syncthing
