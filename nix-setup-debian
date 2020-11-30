@@ -11,9 +11,7 @@
 source ~/.bashrc
 
 # Remove all the unnecesary packages before you start a dist-upgrade,
-# this is to avoid downloading unnecessary updates.
-
-# Now upgrade the system using both options to be sure
+# this is to avoid downloading unnecessary updates. Once done, upgrade the system.
 upgradesys
 
 # Make links to actual content directories in a separate partition
