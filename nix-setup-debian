@@ -49,7 +49,7 @@ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 https://github.com/ActivityWatch/activitywatch/releases
 
 # Install necessary apps
-sudo apt install -y ktorrent kompare qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam  libreoffice xserver-xorg-input-synaptics nordvpn wireguard bashtop glances syncthing
+sudo apt install -y ktorrent kompare qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam  libreoffice xserver-xorg-input-synaptics nordvpn wireguard glances syncthing neovim
 
 # Install proprietary drivers
 sudo ubuntu-drivers autoinstall
