@@ -35,10 +35,6 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" >> /etc/apt/sources.list.d/enpass.list'
 wget -O - http://repo.sinew.in/keys/enpass-linux.key | sudo apt-key add -
 
-# Install the bashtop commandline sysmon app
-# https://github.com/aristocratos/bashtop#installation
-sudo add-apt-repository ppa:bashtop-monitor/bashtop
-
 # Download and Install Unified Remote Server
 wget https://www.unifiedremote.com/download/linux-x64-deb && sudo dpkg --install linux-x64-deb
 
