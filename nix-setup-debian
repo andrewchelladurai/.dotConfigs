@@ -3,20 +3,9 @@
 # Preferred Distro : KDE Neon
 #
 
-# Convenient aliases for frequent commands
-# Add to profile or shell rc file (prefer bash)
-
-# system upgrade using package consistency tool (KDE specific)
-alias upgradesys='sudo pkcon refresh && sudo pkcon -y update && sudo apt autoremove -y && sudo apt autoclean -y'
-# restart networkmanager service using system control
-alias restartNMW='sudo systemctl restart network-manager'
-# restart networkmanager service using nm's own utility
-alias restartNMCli='nmcli networking off ; sleep 10 ; nmcli networking on'
-# LibVrt (VirtualBox Guests) and KVM (Android Emulators) conflict and do not run together.
-# Stop KVM emulation, by disabling the kernel module
-alias kvmstop="sudo rmmod kvm_intel ; sudo rmmod kvm"
-# Start KVM emulation, by enabling the kernel module
-alias kvmstart="sudo insmod /lib/modules/$(uname -r)/kernel/arch/x86/kvm/kvm.ko ; sudo insmod /lib/modules/$(uname -r)/kernel/arch/x86/kvm/kvm-intel.ko"
+# Convenient aliases for frequent commands are now a part of the .bash_aliases file.
+# Download and source the .bash_aliases file from the repo before proceeding. 
+# Some steps below require custom aliases to be present for execution.
 
 # Now reload the  modifications
 source ~/.bashrc
