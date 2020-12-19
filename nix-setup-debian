@@ -48,8 +48,11 @@ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 # Download and install the latest release of ActivityWatch Timetracker
 https://github.com/ActivityWatch/activitywatch/releases
 
+# Install the bashtop system monitor : https://github.com/aristocratos/bashtop
+sudo add-apt-repository ppa:bashtop-monitor/bashtop
+
 # Install necessary apps
-sudo apt install -y ktorrent kompare qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam  libreoffice xserver-xorg-input-synaptics nordvpn wireguard glances syncthing neovim
+sudo apt install -y ktorrent kdiff3 qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam  libreoffice xserver-xorg-input-synaptics nordvpn wireguard glances lm-sensors bashtop syncthing neovim
 
 # Install proprietary drivers
 sudo ubuntu-drivers autoinstall
