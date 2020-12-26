@@ -52,7 +52,8 @@ https://github.com/ActivityWatch/activitywatch/releases
 sudo add-apt-repository ppa:bashtop-monitor/bashtop
 
 # Install necessary apps
-sudo apt install -y ktorrent kdiff3 qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam  libreoffice xserver-xorg-input-synaptics nordvpn wireguard glances lm-sensors bashtop syncthing neovim
+sudo apt install -y ktorrent kdiff3 qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam xserver-xorg-input-synaptics nordvpn wireguard glances lm-sensors bashtop syncthing neovim default-jdk
+sudo apt-get install -y --no-install-recommends libreoffice
 
 # Install proprietary drivers
 sudo ubuntu-drivers autoinstall
