@@ -72,6 +72,10 @@ alias pscpu='ps auxf | sort -nr -k 3 | head -10'
 # Make wget start with continue option by default
 alias wget='wget -c'
 
+# Nordvpn related commands (QuickConnect and Disconnect)
+alias vpnc="nordvpn c"
+alias vpnd="nordvpn d"
+
 #############
 #
 # The next section modifies the behavior of bash
