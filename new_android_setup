@@ -11,19 +11,32 @@ adb shell pm grant com.oasisfeng.greenify android.permission.READ_LOGS
 adb shell pm grant com.oasisfeng.greenify android.permission.DUMP
 adb shell am force-stop com.oasisfeng.greenify
 
+###########################
 # Give Tasker the rights it deserves and needs
-adb shell pm grant net.dinglisch.android.taskerm android.permission.WRITE_SECURE_SETTINGS
-adb shell pm grant net.dinglisch.android.taskerm android.permission.READ_LOGS
+###########################
 
+# Check running services (Context - Application)
+adb shell pm grant net.dinglisch.android.taskerm android.permission.DUMP
+# Read System Logs (Context - Event - LogCat Entry)
+adb shell pm grant net.dinglisch.android.taskerm android.permission.READ_LOGS
+# Write Secure Settings (Action - Settings - Custom Setting)
+adb shell pm grant net.dinglisch.android.taskerm android.permission.WRITE_SECURE_SETTINGS
+
+###########################
 # Give AutoApps the rights it deserves and needs
+###########################
 adb shell pm grant com.joaomgcd.autotools android.permission.WRITE_SECURE_SETTINGS
 adb shell pm grant com.joaomgcd.autotools android.permission.READ_LOGS
 
+###########################
 # Give AutoInput the rights it deserves and needs
+###########################
 adb shell pm grant com.joaomgcd.autoinput android.permission.WRITE_SECURE_SETTINGS
 
+###########################
 # Give Join Clipboard Permission on Android 10
 # https://joaoapps.com/AutoApps/Help/Info/com.joaomgcd.join/android_10_read_logs.html
+###########################
 adb -d shell appops set com.joaomgcd.join SYSTEM_ALERT_WINDOW allow
 adb shell pm grant com.joaomgcd.join android.permission.WRITE_SECURE_SETTINGS
 adb shell pm grant com.joaomgcd.join android.permission.READ_LOGS
