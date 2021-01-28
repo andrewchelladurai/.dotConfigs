@@ -25,13 +25,17 @@ adb shell pm grant net.dinglisch.android.taskerm android.permission.WRITE_SECURE
 ###########################
 # Give AutoApps the rights it deserves and needs
 ###########################
-adb shell pm grant com.joaomgcd.autotools android.permission.WRITE_SECURE_SETTINGS
-adb shell pm grant com.joaomgcd.autotools android.permission.READ_LOGS
 
-###########################
-# Give AutoInput the rights it deserves and needs
-###########################
+# LogCat for AutoTools
+adb shell pm grant com.joaomgcd.autotools android.permission.READ_LOGS
+# Secure Settings for AutoTools
+adb shell pm grant com.joaomgcd.autotools android.permission.WRITE_SECURE_SETTINGS
+# Remove screen recording warning from AutoInput
+adb shell appops set com.joaomgcd.autoinput PROJECT_MEDIA allow
+# Secure Settings for AutoInput (not sure exactly which action from AI needs secure settings)
 adb shell pm grant com.joaomgcd.autoinput android.permission.WRITE_SECURE_SETTINGS
+# Secure Settings for AutoWear
+adb shell pm grant com.joaomgcd.autowear android.permission.WRITE_SECURE_SETTINGS
 
 ###########################
 # Give Join Clipboard Permission on Android 10
@@ -42,5 +46,7 @@ adb shell pm grant com.joaomgcd.join android.permission.WRITE_SECURE_SETTINGS
 adb shell pm grant com.joaomgcd.join android.permission.READ_LOGS
 adb shell am force-stop com.joaomgcd.join
 
+###########################
 # Make XDA Navigation Gestures useful
+###########################
 adb shell pm grant com.xda.nobar android.permission.WRITE_SECURE_SETTINGS
