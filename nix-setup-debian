@@ -48,11 +48,12 @@ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 # Download and install the latest release of ActivityWatch Timetracker
 https://github.com/ActivityWatch/activitywatch/releases
 
-# Install the bashtop system monitor : https://github.com/aristocratos/bashtop
-sudo add-apt-repository ppa:bashtop-monitor/bashtop
+# Install the bpytop system monitor : https://github.com/aristocratos/bpytop
+echo "deb http://packages.azlux.fr/debian/ buster main" | sudo tee /etc/apt/sources.list.d/azlux.list
+wget -qO - https://azlux.fr/repo.gpg.key | sudo apt-key add -
 
 # Install necessary apps
-sudo apt install -y ktorrent kdiff3 qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam xserver-xorg-input-synaptics nordvpn wireguard glances lm-sensors bashtop syncthing neovim default-jdk
+sudo apt install -y ktorrent kdiff3 qemu-kvm bridge-utils kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam xserver-xorg-input-synaptics nordvpn wireguard glances syncthing neovim default-jdk bpytop
 sudo apt-get install -y --no-install-recommends libreoffice
 
 # Install proprietary drivers
