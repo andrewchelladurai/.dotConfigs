@@ -6,3 +6,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 # Set the FLUTTER_HOME path and include it's binaries in path
 export FLUTTER_HOME=/home/$(whoami)/Tools/sdk-flutter
 export PATH=$FLUTTER_HOME/bin:$PATH
+
+# Set bash_history file_path to be in the cache directory
+export HISTFILE=/home/$USER/.cache/.bash_history
