@@ -16,7 +16,7 @@
 #############
 
 # upgrade system and remove unwanted packages afterwards
-alias upgradesys='sudo pkcon refresh && sudo pkcon -y update && sudo apt autoremove -y && sudo apt autoclean -y'
+alias upgradesys='sudo pkcon refresh && sudo pkcon -y update ; sudo apt autoremove -y && sudo apt autoclean -y'
 
 # restart networkmanager service using system control
 alias restartNMW='sudo systemctl restart network-manager'
