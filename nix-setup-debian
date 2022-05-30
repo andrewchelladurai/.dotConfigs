@@ -48,7 +48,7 @@ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 # Download and install the latest release of ActivityWatch Timetracker
 https://github.com/ActivityWatch/activitywatch/releases
 
-# Install the bpytop system monitor : https://github.com/aristocratos/bpytop
+# Install the bpytop system monitor : https://github.com/aristocratos/bashtop | https://packages.azlux.fr/
 echo "deb http://packages.azlux.fr/debian/ buster main" | sudo tee /etc/apt/sources.list.d/azlux.list
 wget -qO - https://azlux.fr/repo.gpg.key | sudo apt-key add -
 
