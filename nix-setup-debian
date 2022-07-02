@@ -58,7 +58,7 @@ wget -qO - https://azlux.fr/repo.gpg.key | sudo apt-key add -
 sudo apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 
 # Install necessary apps
-sudo apt install -y ktorrent kdiff3 kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam xserver-xorg-input-synaptics nordvpn wireguard syncthing neovim default-jdk bashtop isoimagewriter calligraplan zanshin tellico kalendar kaddressbook ktouch kalarm kontact kget korganizer elisa kmail krdc kompare kmousetool ksystemlog kate ark
+sudo apt install -y ktorrent kdiff3 kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam xserver-xorg-input-synaptics nordvpn wireguard neovim default-jdk bashtop kate
 sudo apt-get install -y --no-install-recommends libreoffice
 
 # Install proprietary drivers
