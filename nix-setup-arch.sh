@@ -19,7 +19,7 @@ ln -s ~/..bash_profile ~/.config/bash/..bash_profile
 source ~/.bashrc
 
 # Remove all the unnecesary packages from the fresh-install
-sudo pacman -R firewalld firefox vi
+sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi 
 
 # Now do a dist-upgrade
 upgradesys
