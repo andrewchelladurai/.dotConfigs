@@ -23,13 +23,13 @@ upgradesys
 
 # Make links to actual content directories in a separate partition
 # This is only required if the data partition is separate from the actual home mount
-rmdir Documents/ Downloads/ Pictures/ Videos/ Music/
-ln -s /media/$(whoami)/Data/Documents/ Documents
-ln -s /media/$(whoami)/Data/Downloads/ Downloads
-ln -s /media/$(whoami)/Data/Volatile/ Volatile
-ln -s /media/$(whoami)/Media/Music/ Music
-ln -s /media/$(whoami)/Media/Pictures/ Pictures
-ln -s /media/$(whoami)/Media/Movies/ Videos
+# rmdir Documents/ Downloads/ Pictures/ Videos/ Music/
+# ln -s /media/$(whoami)/Data/Documents/ Documents
+# ln -s /media/$(whoami)/Data/Downloads/ Downloads
+# ln -s /media/$(whoami)/Data/Volatile/ Volatile
+# ln -s /media/$(whoami)/Media/Music/ Music
+# ln -s /media/$(whoami)/Media/Pictures/ Pictures
+# ln -s /media/$(whoami)/Media/Movies/ Videos
 
 # For capability to add PPA repositories
 sudo apt install -y software-properties-common software-properties-qt
@@ -74,15 +74,15 @@ sudo ubuntu-drivers autoinstall
 # This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
 # have'nt observred WiFi drops for quite some time
 # DO not think this is required any more, however keeping it for records sake.
-sudo sh -c 'echo "options rtl8723be fwlps=0 swlps=0 ips=0 ant_sel=1" >> /etc/modprobe.d/rtl8723be.conf'
+# sudo sh -c 'echo "options rtl8723be fwlps=0 swlps=0 ips=0 ant_sel=1" >> /etc/modprobe.d/rtl8723be.conf'
 
 # For Android AVD emulation performance
 sudo adduser $(whoami) kvm
 
 # For bug that shows the extra user on the login screen
-sudo usermod -u 999 libvirt-qemu
+# sudo usermod -u 999 libvirt-qemu
 
 # For manually mounting HDD's by label - Use this in the user profile if needed
 # Was required for ElementaryOs Luna because of a bug
 # Not sure if still needed, keeping for recod's sake
-udisksctl mount -b /dev/disk/by-label/Data
+# udisksctl mount -b /dev/disk/by-label/Data
