@@ -4,6 +4,14 @@
 # https://github.com/EndeavourOS-Community-Editions/bspwm
 #
 
+# Disable Screen lock on lid-close, this is because I want to handle it myself
+# and most times, the laptop will be connected to an external monitor with the lid closed
+sudo vi /etc/systemd/logind.conf
+HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+HandleLidSwitchDocked=ignore
+systemctl restart systemd-logind.service
+
 # Convenient aliases for frequent commands are now a part of the .bash_aliases file.
 # Download and source the .bash_aliases file from the repo before proceeding. 
 # Some steps below require custom aliases to be present for execution.
