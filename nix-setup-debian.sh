@@ -60,9 +60,11 @@ echo "deb http://packages.azlux.fr/debian/ buster main" | sudo tee /etc/apt/sour
 wget -qO - https://azlux.fr/repo.gpg.key | sudo apt-key add -
 # alternate PPA : sudo add-apt-repository ppa:bashtop-monitor/bashtop && sudo apt install bashtop
 
-# Installl KVM packages for Linux
+
+# For Android AVD emulation performance, installl KVM packages for Linux
 # https://developer.android.com/studio/run/emulator-acceleration?utm_source=android-studio#vm-linux
 sudo apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+sudo adduser $(whoami) kvm
 
 # Install necessary apps
 sudo apt install -y ktorrent kdiff3 kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam xserver-xorg-input-synaptics nordvpn wireguard neovim default-jdk bashtop kate
@@ -75,9 +77,6 @@ sudo ubuntu-drivers autoinstall
 # have'nt observred WiFi drops for quite some time
 # DO not think this is required any more, however keeping it for records sake.
 # sudo sh -c 'echo "options rtl8723be fwlps=0 swlps=0 ips=0 ant_sel=1" >> /etc/modprobe.d/rtl8723be.conf'
-
-# For Android AVD emulation performance
-sudo adduser $(whoami) kvm
 
 # For bug that shows the extra user on the login screen
 # sudo usermod -u 999 libvirt-qemu
