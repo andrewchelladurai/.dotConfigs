@@ -4,14 +4,6 @@
 # https://github.com/EndeavourOS-Community-Editions/bspwm
 #
 
-# Disable Screen lock on lid-close, this is because I want to handle it myself
-# and most times, the laptop will be connected to an external monitor with the lid closed
-sudo vi /etc/systemd/logind.conf
-HandleLidSwitch=ignore
-HandleLidSwitchExternalPower=ignore
-HandleLidSwitchDocked=ignore
-systemctl restart systemd-logind.service
-
 # Convenient aliases for frequent commands are now a part of the .bash_aliases file.
 # Download and source the .bash_aliases file from the repo before proceeding. 
 # Some steps below require custom aliases to be present for execution.
@@ -20,11 +12,38 @@ systemctl restart systemd-logind.service
 mkdir -p ~/.config/bash/
 mv -v ~/.bashrc ~/.config/bash/
 ln -s ~/.bashrc ~/.config/bash/.bashrc
-ln -s ~/..bash_aliases ~/.config/bash/..bash_aliases
-ln -s ~/..bash_profile ~/.config/bash/..bash_profile
+ln -s ~/..bash_aliases ~/.config/bash/.bash_aliases
+ln -s ~/..bash_profile ~/.config/bash/.bash_profile
 
-# Now reload the modifications
+# Now reload the  modifications
 source ~/.bashrc
+
+# Disable Screen lock on lid-close, this is because I want to handle it myself
+# and most times, the laptop will be connected to an external monitor with the lid closed
+sudo vi /etc/systemd/logind.conf
+HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+HandleLidSwitchDocked=ignore
+systemctl restart systemd-logind.service
+
+# Remove all the unnecesary packages from the fresh-install
+TO-DO
+
+# Now do a dist-upgrade
+upgradesys
+
+# Make links to actual content directories in a separate partition
+# This is only required if the data partition is separate from the actual home mount
+# rmdir Documents/ Downloads/ Pictures/ Videos/ Music/
+# ln -s /media/$(whoami)/Data/Documents/ Documents
+# ln -s /media/$(whoami)/Data/Downloads/ Downloads
+# ln -s /media/$(whoami)/Data/Volatile/ Volatile
+# ln -s /media/$(whoami)/Media/Music/ Music
+# ln -s /media/$(whoami)/Media/Pictures/ Pictures
+# ln -s /media/$(whoami)/Media/Movies/ Videos
+
+# Mask unnecessary desktop files from below location to clean-up rofi / application launchers
+ls -trh /usr/share/applications/*desktop
 
 # Remove all the unnecesary packages from the fresh-install
 sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info meld reflector reflector-simple stoken openconnect xed mpv eos-update-notifier eos-rankmirrors file-roller endeavouros-xfce4-terminal-colors endeavouros-theming lxappearance-gtk3 yad-eos eos-qogir-icons xterm 
