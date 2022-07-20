@@ -7,6 +7,13 @@
 # Download and source the .bash_aliases file from the repo before proceeding. 
 # Some steps below require custom aliases to be present for execution.
 
+# Move bash files to config dir and link to it from the home dir
+mkdir -p ~/.config/bash/
+mv -v ~/.bashrc ~/.config/bash/
+ln -s ~/.bashrc ~/.config/bash/.bashrc
+ln -s ~/..bash_aliases ~/.config/bash/..bash_aliases
+ln -s ~/..bash_profile ~/.config/bash/..bash_profile
+
 # Now reload the  modifications
 source ~/.bashrc
 
