@@ -151,8 +151,9 @@ set shiftwidth=4
 " indent a new line the same amount as the line just typed
 set autoindent
 
-" add relative line numbers
-set relativenumber
+" Combination of below will be a hybrid line number display
+set relativenumber                                                                                       
+set number
 
 " get bash-like tab completions
 set wildmode=longest,list
@@ -160,8 +161,9 @@ set wildmode=longest,list
 " set an 80 column border for good coding style
 " set cc=120
 
+" Disabled coz, it interferes with copy-on-select/highlight
 " enable mouse click
-set mouse=a
+" set mouse=a
 
 " using system clipboard
 set clipboard=unnamedplus
@@ -173,7 +175,8 @@ set cursorline
 set ttyfast
 
 " enable spell check (may need to download language package)
-" set spell
+set spell
 
 " Directory to store backup files.
 set backupdir=~/.cache/vim
+
