@@ -1,5 +1,5 @@
-
-# Customizations
+# Customizations for BSPWM : https://github.com/baskerville/bspwm
+# Usually located in .config/bspwm/bspwmrc
 
 # disable screen blanking
 xset s off
