@@ -1,6 +1,7 @@
 #
 # For Ubuntu Based Distros (KDE Specific)
 # Preferred Distro : KDE Neon
+# https://neon.kde.org/
 #
 
 # Convenient aliases for frequent commands are now a part of the .bash_aliases file.
