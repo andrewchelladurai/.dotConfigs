@@ -1,5 +1,6 @@
 " For this files details see : https://neovim.io/doc/user/starting.html#init.vim
 " For configuration that can be used in the file see : https://neovim.io/doc/user/quickref.html
+" Download this at location ~/.config/nvim/init.vim
 
 " Set to auto read when a file is changed from the outside
 set autoread
