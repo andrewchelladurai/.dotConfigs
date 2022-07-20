@@ -15,8 +15,11 @@
 #
 #############
 
-# upgrade system and remove unwanted packages afterwards
-alias upgradesys='sudo pkcon refresh && sudo pkcon -y update ; sudo apt autoremove -y && sudo apt autoclean -y'
+# upgrade system and remove unwanted packages afterwards, uncomment the correct one to use.
+# This is for debian based systems
+# alias upgradesys='sudo pkcon refresh && sudo pkcon -y update ; sudo apt autoremove -y && sudo apt autoclean -y'
+# This is for Arch based systems
+# alias upgradesys='sudo pacman -Syyu ; sudo pacman -Qtdq | sudo pacman -Rns - ;'
 
 # restart networkmanager service using system control
 alias restartNMW='sudo systemctl restart network-manager'
