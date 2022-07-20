@@ -19,7 +19,7 @@ ln -s ~/..bash_profile ~/.config/bash/..bash_profile
 source ~/.bashrc
 
 # Remove all the unnecesary packages from the fresh-install
-TO-DO
+sudo pacman -R firewalld firefox vi
 
 # Now do a dist-upgrade
 upgradesys
