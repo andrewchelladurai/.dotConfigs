@@ -20,6 +20,11 @@
 # This is for Arch based systems
 # alias upgradesys='sudo pacman -Syyu ; sudo pacman -Qtdq | sudo pacman -Rns - ;'
 
+# This below is used spcifically in BSPWM
+# we first need to save profiles using autorandr for this to work
+alias athommonoff='autorandr --change atHomeExternalNotConnected && sleep 3 && bspc wm -r'
+alias athommonon='autorandr --change atHomeExternalConnected && sleep 3 && bspc wm -r'
+
 # restart networkmanager service using system control
 alias restartNMW='sudo systemctl restart network-manager'
 
