@@ -19,7 +19,7 @@ ln -s ~/..bash_profile ~/.config/bash/..bash_profile
 source ~/.bashrc
 
 # Remove all the unnecesary packages from the fresh-install
-sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info
+sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info meld reflector reflector-simple stoken openconnect
 
 # Now do a dist-upgrade
 upgradesys
