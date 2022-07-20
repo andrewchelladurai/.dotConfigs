@@ -1,0 +1,13 @@
+
+# Customizations
+
+# disable screen blanking
+xset s off
+xset s noblank
+xset -dpms
+xset dpms 0 0 0
+
+# set monitor brigtness to max value
+xrandr --output HDMI1 --brightness 1.0 --output eDP1 --brightness 1.0
+
+xrandr --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --scale-from 1366x768 --same-as eDP1 --output VIRTUAL1 --off
