@@ -9,9 +9,8 @@
 #
 # This below section must be part of the ~/.bashrc file, towards the start of the file
 #
-# if [ -f ~/.bash_aliases ]; then
-# . ~/.bash_aliases
-# fi
+# load the custom aliases
+# [[ -e ~/.bash_aliases ]] && . ~/.bash_aliases
 #
 #############
 
