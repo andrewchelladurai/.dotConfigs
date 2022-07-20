@@ -18,8 +18,10 @@ ln -s ~/..bash_profile ~/.config/bash/..bash_profile
 # Now reload the  modifications
 source ~/.bashrc
 
-# Remove all the unnecesary packages before you start a dist-upgrade,
-# this is to avoid downloading unnecessary updates. Once done, upgrade the system.
+# Remove all the unnecesary packages from the fresh-install
+TO-DO
+
+# Now do a dist-upgrade
 upgradesys
 
 # Make links to actual content directories in a separate partition
