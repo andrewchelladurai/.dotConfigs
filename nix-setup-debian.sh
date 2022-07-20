@@ -12,8 +12,8 @@
 mkdir -p ~/.config/bash/
 mv -v ~/.bashrc ~/.config/bash/
 ln -s ~/.bashrc ~/.config/bash/.bashrc
-ln -s ~/..bash_aliases ~/.config/bash/..bash_aliases
-ln -s ~/..bash_profile ~/.config/bash/..bash_profile
+ln -s ~/..bash_aliases ~/.config/bash/.bash_aliases
+ln -s ~/..bash_profile ~/.config/bash/.bash_profile
 
 # Now reload the  modifications
 source ~/.bashrc
