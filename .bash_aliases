@@ -4,7 +4,7 @@
 # Following the below sugegstion from the default ~/.bashrc file
 #
 # You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
+# ~/.config/bash/bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 #
 # This below section must be part of the ~/.bashrc file, towards the start of the file
@@ -66,12 +66,6 @@ alias .5='cd ../../../../..'
 # Show open ports by default
 alias showports='netstat -tulanp'
 
-# get top process eating memory
-alias psmem='ps auxf | sort -nr -k 4 | head -10'
-
-# get top process eating cpu
-alias pscpu='ps auxf | sort -nr -k 3 | head -10'
-
 # Make wget start with continue option by default
 alias wget='wget -c'
 
@@ -85,9 +79,7 @@ alias vpnd="nordvpn d"
 alias scrcpy='scrcpy --turn-screen-off --stay-awake'
 
 #############
-#
 # The next section modifies the behavior of bash
-#
 #############
 
 # Set the default editor to vim.
