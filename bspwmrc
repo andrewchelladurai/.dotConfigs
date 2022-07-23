@@ -1,13 +1,75 @@
 # Customizations for BSPWM : https://github.com/baskerville/bspwm
 # Usually located in .config/bspwm/bspwmrc
 
-# disable screen blanking
+#! /bin/sh
+
+#
+# BPSC Config Section
+#
+
+# Number of work-spaces
+bspc monitor -d I II III IV
+
+# Merge both the laptop + external monitors.
+# No longer necessary since we now use the autorandr utility to switch configurations.
+# bspc config merge_overlapping_monitors true
+
+bspc config border_width         1
+bspc config window_gap          13
+
+bspc config split_ratio          0.69
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config pointer_follows_focus true
+bspc config focus_follows_pointer true
+
+bspc rule -a Gimp desktop='^4' state=floating follow=on
+bspc rule -a google-chrome desktop='^2'
+
+# Border
+bspc config focused_border_color        "#6c71c4"
+bspc config normal_border_color         "#073642"
+bspc config active_border_color         "#073642"
+
+#
+# Autostart / Autosetup other tools.
+#
+
+# Disable screen blanking.
 xset s off
 xset s noblank
 xset -dpms
 xset dpms 0 0 0
 
-# set monitor brigtness to max value
+# Set brigtness to max value on both nonitors.
 xrandr --output HDMI1 --brightness 1.0 --output eDP1 --brightness 1.0
 
-xrandr --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --scale-from 1366x768 --same-as eDP1 --output VIRTUAL1 --off
+# restart sxhkd if already running.
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# Set a scaled random wallpaper
+feh --bg-scale --randomize ~/Pictures/wpapers/main_desktop/*
+
+# Restart Bar
+killall polybar > /dev/null && ~/.config/polybar/launch.sh &
+
+# Restart Notifications
+killall dunst > /dev/null && notify-send 'Started'
+
+# Polkit
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Dex - DesktopEntry Execution
+dex -a -s /etc/xdg/autostart/:~/.config/autostart/  
+
+# Picom
+# picom -CGb &
+
+# Restart Network Applet
+killall nm-applet > /dev/null && nm-applet --indicator &
+
+# Cursor
+xsetroot -cursor_name left_ptr &
+
+# Low battery notifier
+~/.config/bspwm/scripts/low_bat_notifier.sh
