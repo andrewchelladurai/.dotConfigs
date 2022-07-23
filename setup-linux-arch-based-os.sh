@@ -36,11 +36,12 @@ systemctl restart systemd-logind.service
 # ln -s /media/$(whoami)/Media/Pictures/ Pictures
 # ln -s /media/$(whoami)/Media/Movies/ Videos
 
-# Mask unnecessary desktop files from below location to clean-up rofi / application launchers
-ls -trh /usr/share/applications/*desktop
-
 # Remove all the unnecesary packages from the fresh-install
 sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info meld reflector reflector-simple stoken openconnect xed mpv eos-update-notifier eos-rankmirrors file-roller endeavouros-xfce4-terminal-colors endeavouros-theming lxappearance-gtk3 yad-eos eos-qogir-icons xterm nitrogen
+sudo pacman -Rsd --nodeps v4l-utils
+
+# Mask unnecessary desktop files from below location to clean-up rofi / application launchers
+ls -trh /usr/share/applications/*desktop
 
 # Now do a dist-upgrade
 upgradesys
