@@ -50,8 +50,8 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # Set a scaled random wallpaper
 feh --bg-scale --randomize ~/Pictures/wpapers/main_desktop/*
 
-# Restart Bar
-killall polybar > /dev/null && ~/.config/polybar/launch.sh &
+# Launch Bar
+~/.config/polybar/launch.sh &
 
 # Restart Notifications
 killall dunst > /dev/null && notify-send 'Started'
