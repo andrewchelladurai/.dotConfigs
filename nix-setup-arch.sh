@@ -72,3 +72,6 @@ sudo adduser $(whoami) kvm
 # Was required for ElementaryOs Luna because of a bug
 # Not sure if still needed, keeping for recod's sake
 # udisksctl mount -b /dev/disk/by-label/Data
+
+# Modify and/or remove the unnecessary desktop files from /usr/share/applications
+
