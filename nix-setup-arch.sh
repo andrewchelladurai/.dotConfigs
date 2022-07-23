@@ -26,12 +26,6 @@ HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
 systemctl restart systemd-logind.service
 
-# Remove all the unnecesary packages from the fresh-install
-TO-DO
-
-# Now do a dist-upgrade
-upgradesys
-
 # Make links to actual content directories in a separate partition
 # This is only required if the data partition is separate from the actual home mount
 # rmdir Documents/ Downloads/ Pictures/ Videos/ Music/
@@ -52,9 +46,9 @@ sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-vol
 upgradesys
 
 # Install necessary apps
-TO-DO
-sudo paman ktorrent kdiff3 kubuntu-restricted-extras git vlc virtualbox virtualbox-guest-additions-iso kget sqlite filelight gimp google-chrome-stable enpass inkscape digikam xserver-xorg-input-synaptics nordvpn wireguard neovim default-jdk bashtop kate
-sudo apt-get install -y --no-install-recommends libreoffice
+sudo pacman -S --needed bluez bluez-utils blueman
+sudo pacman -S neovim sqlite bashtop wireguard-tools jdk-openjdk scrcpy android-udev gimp vlc
+yay -S google-chrome enpass-bin onlyoffice-bin nordvpn-bin android-studio 
 
 # Install Nvidia Drivers, this will replace the open-source nouveau drivers.
 # A reboot is needed after the reinstall
