@@ -44,6 +44,9 @@ export EDITOR=nvim
 # Avoid successive duplicates in the bash command history.
 export HISTCONTROL=ignoredups
 
+# Set bash_history file_path to be in the cache directory
+export HISTFILE=/home/$USER/.cache/.bash_history
+
 # Append commands to the bash command history file (~/.bash_history)
 # instead of overwriting it.
 shopt -s histappend
