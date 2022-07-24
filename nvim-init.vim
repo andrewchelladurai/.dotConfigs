@@ -1,6 +1,16 @@
+"
+" Customizations for Neovim : https://neovim.io/
+" The config must be placed at ~/.config/nvim/init.vim o nthe local system.
 " For this files details see : https://neovim.io/doc/user/starting.html#init.vim
 " For configuration that can be used in the file see : https://neovim.io/doc/user/quickref.html
-" Download this at location ~/.config/nvim/init.vim
+"
+" Do below to use this setup.
+"
+" mkdir -p ~/.config/nvim/ && cd ~/.config/nvim/
+" mv -v init.vim init.vim_original
+" wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/init.vim
+" restart all instances on NVIM
+"
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -39,10 +49,7 @@ set smartcase
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
-
-" Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set incsearch  
 
 " For regular expressions turn magic on
 set magic
@@ -54,14 +61,6 @@ set showmatch
 syntax enable 
 
 set background=dark
-
-" Set extra options when running in GUI mode
-if has("gui_running")
-set guioptions-=T
-set guioptions-=e
-set t_Co=256
-set guitablabel=%M\ %t
-endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -88,9 +87,14 @@ set tabstop=4
 set lbr
 set tw=500
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+" Auto indent
+set ai
+
+" Smart indent
+set si
+
+" Wrap lines
+set wrap
 
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
@@ -148,10 +152,7 @@ set mouse=v
 " width for autoindents
 set shiftwidth=4
 
-" indent a new line the same amount as the line just typed
-set autoindent
-
-" Combination of below will be a hybrid line number display
+" Use hybrid line number display
 set relativenumber                                                                                       
 set number
 
@@ -179,4 +180,3 @@ set spell
 
 " Directory to store backup files.
 set backupdir=~/.cache/vim
-
