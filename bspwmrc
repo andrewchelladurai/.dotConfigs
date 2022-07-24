@@ -7,7 +7,7 @@
 #
 # Do below to use this setup
 #
-# mkdir -p ~/.config/bspwm/ && # cd ~/.config/bspwm/
+# mkdir -p ~/.config/bspwm/ && cd ~/.config/bspwm/
 # mv -v bspwmrc bspwmrc_original
 # wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/bspwmrc
 # bspc wm -r
