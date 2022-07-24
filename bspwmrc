@@ -1,35 +1,35 @@
-# Customizations for BSPWM : https://github.com/baskerville/bspwm
-# Usually located in .config/bspwm/bspwmrc
-
 #! /bin/sh
+
+#
+# Customizations for BSPWM : https://github.com/baskerville/bspwm
+# Original available @ https://github.com/EndeavourOS-Community-Editions/bspwm/blob/main/.config/bspwm/bspwmrc
+# Usually located in .config/bspwm/bspwmrc
+#
 
 #
 # BPSC Config Section
 #
 
+# Merge both the laptop + external monitors.
+# bspc config merge_overlapping_monitors true
+
 # Number of work-spaces
 bspc monitor -d I II III IV
 
-# Merge both the laptop + external monitors.
-# No longer necessary since we now use the autorandr utility to switch configurations.
-# bspc config merge_overlapping_monitors true
-
-bspc config border_width         1
 bspc config window_gap          13
-
 bspc config split_ratio          0.69
-bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config pointer_follows_focus true
 bspc config focus_follows_pointer true
 
-bspc rule -a Gimp desktop='^4' state=floating follow=on
-bspc rule -a google-chrome desktop='^2'
-
 # Border
+bspc config border_width         3
+bspc config borderless_monocle   true
 bspc config focused_border_color        "#6c71c4"
 bspc config normal_border_color         "#073642"
 bspc config active_border_color         "#073642"
+
+bspc rule -a google-chrome desktop='^2'
 
 #
 # Autostart / Autosetup other tools.
@@ -53,8 +53,8 @@ feh --bg-scale --randomize ~/Pictures/wpapers/main_desktop/*
 # Launch Bar
 ~/.config/polybar/launch.sh &
 
-# Restart Notifications
-killall dunst > /dev/null && notify-send 'Started'
+# Notifications
+/usr/bin/dunst &
 
 # Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -65,8 +65,8 @@ dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 # Picom
 # picom -CGb &
 
-# Restart Network Applet
-killall nm-applet > /dev/null && nm-applet --indicator &
+# Network Applet
+nm-applet --indicator &
 
 # Cursor
 xsetroot -cursor_name left_ptr &
