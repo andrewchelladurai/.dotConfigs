@@ -1,12 +1,12 @@
 #
-# Customizations for BSPWM : https://github.com/baskerville/bspwm
+# Customizations for Simple X hotkey daemon : https://github.com/baskerville/sxhkd
 # Usually located in ~/.config/sxhkd/sxhkdrc on the local system
 # Original available @ https://github.com/EndeavourOS-Community-Editions/bspwm/blob/main/.config/sxhkd/sxhkdrc
 #
 # Do below to use this setup
 #
-# mkdir -p ~/.config/sxhkd/
-# cd ~/.config/sxhkd/
+# mkdir -p ~/.config/sxhkd/ && cd ~/.config/sxhkd/
+# mv -v sxhkdrc sxhkdrc_original
 # wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/sxhkdrc
 # pgrep -x sxhkd > /dev/null || sxhkd &
 #
