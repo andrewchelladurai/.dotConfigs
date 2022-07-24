@@ -1,5 +1,4 @@
 #
-#
 # https://www.gnu.org/software/bash/manual/html_node/Aliases.html
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 #
