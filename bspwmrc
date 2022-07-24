@@ -55,7 +55,7 @@ xrandr --output HDMI1 --brightness 1.0 --output eDP1 --brightness 1.0
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Set a scaled random wallpaper
-feh --bg-scale --randomize ~/Pictures/wpapers/main_desktop/*
+feh --no-fehbg --bg-scale --randomize ~/Pictures/wpapers/main_desktop/*                                  
 
 # Launch Bar
 ~/.config/polybar/launch.sh &
