@@ -4,7 +4,7 @@
 #
 # The RC is usually at location ~/.bashrc on the local system
 # However we are keeping all things consolidated in ~/.config/bash/ and refer to it via a symlink
-##
+#
 # Do below to use this setup
 #
 # mkdir -p ~/.config/bash/ && cd ~/.config/bash/
@@ -21,7 +21,7 @@
 [[ "$(whoami)" = "root" ]] && return
 
 # Run the welcome screen if it exists.
-[[ -f ~/.welcome_screen ]] && . ~/.welcome_screen
+[[ -e ~/.welcome_screen ]] && . ~/.config/.welcome_screen                                                         
 
 # Source the bash_aliases file if it exists.
 [[ -e ~/.bash_aliases ]] && . ~/.bash_aliases
