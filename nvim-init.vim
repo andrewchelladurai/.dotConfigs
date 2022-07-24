@@ -8,7 +8,8 @@
 "
 " mkdir -p ~/.config/nvim/ && cd ~/.config/nvim/
 " mv -v init.vim init.vim_original
-" wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/init.vim
+" wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/nvim-init.vim
+" mv -v nvim-init.vim init.vim
 " restart all instances on NVIM
 "
 
