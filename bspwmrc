@@ -2,8 +2,15 @@
 
 #
 # Customizations for BSPWM : https://github.com/baskerville/bspwm
+# Usually located in ~/.config/bspwm/bspwmrc on the local system
 # Original available @ https://github.com/EndeavourOS-Community-Editions/bspwm/blob/main/.config/bspwm/bspwmrc
-# Usually located in .config/bspwm/bspwmrc
+#
+# Do below to use this setup
+#
+# mkdir -p ~/.config/bspwm/ && # cd ~/.config/bspwm/
+# mv -v bspwmrc bspwmrc_original
+# wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/bspwmrc
+# bspc wm -r
 #
 
 #
