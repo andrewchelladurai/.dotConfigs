@@ -81,21 +81,3 @@ alias vpnd="nordvpn d"
 # Enable Screen Mirroring on when physical device screen is off
 # https://github.com/Genymobile/scrcpy#turn-screen-off
 alias scrcpy='scrcpy --turn-screen-off --stay-awake'
-
-#############
-# The next section modifies the behavior of bash
-#############
-
-# Set the default editor to vim.
-export EDITOR=nvim
-
-# Avoid succesive duplicates in the bash command history.
-export HISTCONTROL=ignoredups
-
-# Append commands to the bash command history file (~/.bash_history)
-# instead of overwriting it.
-shopt -s histappend
-
-# Append commands to the history every time a prompt is shown,
-# instead of after closing the session.
-PROMPT_COMMAND='history -a'
