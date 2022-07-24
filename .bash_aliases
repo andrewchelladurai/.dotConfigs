@@ -1,20 +1,21 @@
-#############
+#
 #
 # https://www.gnu.org/software/bash/manual/html_node/Aliases.html
-# Following the below sugegstion from the default ~/.bashrc file
-#
-# You may want to put all your additions into a separate file like
-# ~/.config/bash/bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 #
-# This below section must be part of the ~/.bashrc file, towards the start of the file
-#
-# load the custom aliases
+# Place all additions into a separate file like ~/.config/bash/bash_aliases instead of adding them in ~/.bashrc directly.
+# Source the separate aliases file in ~/.bashrc as below
 # [[ -e ~/.bash_aliases ]] && . ~/.bash_aliases
 #
-#############
+# Do below to use this setup
+#
+# mkdir -p ~/.config/bash/ && cd ~/.config/bash/
+# mv -v .bash_aliases .bash_aliases_original
+# wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/.bash_aliases
+# Restart existing bash terminal sessions for changes to take effect
+#
 
-# upgrade system and remove unwanted packages afterwards, uncomment the correct one to use.
+# Upgrade system and remove unwanted packages, then uncomment the correct alias type to use.
 # This is for debian based systems
 # alias upgradesys='sudo pkcon refresh && sudo pkcon -y update ; sudo apt autoremove -y && sudo apt autoclean -y'
 # This is for Arch based systems
@@ -39,10 +40,10 @@ alias kvmstop="sudo rmmod kvm_intel ; sudo rmmod kvm"
 alias kvmstart="sudo insmod /lib/modules/$(uname -r)/kernel/arch/x86/kvm/kvm.ko ; sudo insmod /lib/modules/$(uname -r)/kernel/arch/x86/kvm/kvm-intel.ko"
 
 # Map NeoVim to vi
-alias vi="nvim"
+alias v="nvim"
 
 # Start nVim in Realonly mode when needed
-alias vir="nvim -R"
+alias vr="nvim -R"
 
 # Make some possibly destructive commands more interactive.
 alias rm='rm -i'
@@ -51,7 +52,7 @@ alias cp='cp -i'
 
 # Alias list of files to be readable and easy on the eyes.
 alias ll='ls -larth --color=auto'
-alias ls='ls -Fa --color=auto'
+alias l='ls -Fa --color=auto'
 
 # Make output of commands human readable & use colors
 alias df="df -h"
