@@ -63,7 +63,7 @@ sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy android-udev onb
 sudo pacman -S --nodeps intellij-idea-community-edition # No depdendencies since the dependent JDK version may not be the latest.
 
 # Install commonly used applications from the AUR repo
-yay -S google-chrome enpass-bin onlyoffice-bin nordvpn-bin android-studio rdfind typora activitywatch-bin gtypist typiskt cli-visualizer
+yay -S google-chrome enpass-bin onlyoffice-bin nordvpn-bin android-studio rdfind activitywatch-bin gtypist typiskt cli-visualizer
 
 #
 # Other common tasks
