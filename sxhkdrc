@@ -32,10 +32,10 @@ super + shift + d
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
 # show ssh sesssions
-super + ctrl + d
-	rofi -modi drun -show ssh -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
+# super + ctrl + d
+#	rofi -modi drun -show ssh -line-padding 4 \
+#                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
+#                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
 # power-menu 
 super + Escape
