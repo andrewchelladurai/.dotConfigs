@@ -74,7 +74,7 @@ ls -1trh /usr/share/applications/*desktop
 
 # Theme ROFI using https://github.com/adi1090x/rofi
 
-# Theme Polybar using 
+# Theme Polybar using https://github.com/adi1090x/polybar-themes
 
 # This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
 # Do not think this is required any more, however keeping it for records sake.
