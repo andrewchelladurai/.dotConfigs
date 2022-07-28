@@ -72,6 +72,10 @@ yay -S google-chrome enpass-bin onlyoffice-bin nordvpn-bin android-studio rdfind
 # Mask unnecessary desktop files from below location to declutter rofi / application launchers
 ls -1trh /usr/share/applications/*desktop
 
+# Theme ROFI using https://github.com/adi1090x/rofi
+
+# Theme Polybar using 
+
 # This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
 # Do not think this is required any more, however keeping it for records sake.
 # sudo sh -c 'echo "options rtl8723be fwlps=0 swlps=0 ips=0 ant_sel=1" >> /etc/modprobe.d/rtl8723be.conf'
