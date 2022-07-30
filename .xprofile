@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#
+# Do below to use this setup
+#
+# mkdir -p ~/.config/shell-profile/ && cd ~/.config/shell-profile/
+# mv -v .xprofile .xprofile_original
+# wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/.xprofile
+# ln -s ~/.config/shell-profile/.xprofile ~/.xprofile
+# Restart Xsession for changes to take effect 
+#
+
+[[ -f ~/.bash_profile ]] && . ~/.bash_profile
