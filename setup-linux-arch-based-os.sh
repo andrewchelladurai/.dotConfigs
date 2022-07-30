@@ -40,16 +40,12 @@ systemctl restart systemd-logind.service
 # ln -s /media/$(whoami)/Media/Pictures/ Pictures
 # ln -s /media/$(whoami)/Media/Movies/ Videos
 
-# Remove all the unnecesary packages from the fresh-install
-sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info meld reflector reflector-simple stoken openconnect xed mpv eos-update-notifier eos-rankmirrors file-roller endeavouros-xfce4-terminal-colors endeavouros-theming lxappearance-gtk3 yad-eos eos-qogir-icons xterm nitrogen
-sudo pacman -Rsd --nodeps v4l-utils
-
-# Now do a dist-upgrade
-upgradesys
-
 #
 # Install necessary apps
 #
+
+# Do a dist-upgrade to get recent core updates
+upgradesys
 
 # Install Bluetooth Stack and start the service at each reboot and also immediately
 sudo pacman -S --needed bluez bluez-utils blueman && sudo systemctl enable --now bluetooth
@@ -59,11 +55,18 @@ sudo pacman -S --needed bluez bluez-utils blueman && sudo systemctl enable --now
 sudo pacman -S nvidia-installer-dkms && sudo nvidia-installer-dkms && sudo systemctl reboot
 
 # Install commonly used applications from the main repo
-sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy android-udev onboard ncdu btop cmus nnn python-pywal termdown
+sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy android-udev onboard ncdu btop cmus nnn termdown calc alacritty
 sudo pacman -S --nodeps intellij-idea-community-edition # No depdendencies since the dependent JDK version may not be the latest.
 
 # Install commonly used applications from the AUR repo
 yay -S google-chrome enpass-bin onlyoffice-bin nordvpn-bin android-studio rdfind activitywatch-bin gtypist typiskt cli-visualizer
+
+# Remove all the unnecesary packages from the fresh-install
+sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info meld reflector reflector-simple stoken openconnect xed mpv eos-update-notifier eos-rankmirrors file-roller endeavouros-xfce4-terminal-colors endeavouros-theming lxappearance-gtk3 yad-eos eos-qogir-icons xterm nitrogen xfce4-terminal
+sudo pacman -Rsd --nodeps v4l-utils
+
+# Now do a dist-upgrade again to clear unwanted dependencies
+upgradesys
 
 #
 # Other common tasks
