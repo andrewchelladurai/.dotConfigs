@@ -44,6 +44,10 @@ systemctl restart systemd-logind.service
 # Install necessary apps
 #
 
+# Install Jetbrains Mono Font : https://github.com/JetBrains/JetBrainsMono
+# Below will download latest version and place it in ~/.local/share/fonts/
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
+
 # Do a dist-upgrade to get recent core updates
 upgradesys
 
