@@ -49,6 +49,7 @@ systemctl restart systemd-logind.service
 # Below will download latest version and place it in ~/.local/share/fonts/
 # Remove all the unecessary font styles
 cd ~/.local/share/fonts/
+wget -c https://github.com/Templarian/MaterialDesign-Font/raw/master/MaterialDesignIconsDesktop.ttf
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 rm JetBrains*Semi*ttf JetBrains*Italic*ttf JetBrainsMonoNL-*ttf JetBrainsMono-Extra*ttf
 
