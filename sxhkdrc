@@ -154,26 +154,26 @@ super + {Left,Down,Up,Right}
 # Special hotkeys
 #
 
-# Multimedia keys
+# RaiseVolume
 XF86AudioRaiseVolume
   amixer -q set Master 5%+ unmute
 
-# Still multimedia
+# LowerVolume
 XF86AudioLowerVolume
   amixer -q set Master 5%- unmute
 
-# still
+# Toggle AudioMute
 XF86AudioMute
   amixer -D pulse sset Master toggle-mute
 
-# amixer -q set Master toggle
 # Simple amixer command seems to have problems unmuting device
+# amixer -q set Master toggle
 
 # Brightness up
 XF86MonBrightnessUp
   xbacklight -inc 5
 
-# And brightness down
+# Brightness down
 XF86MonBrightnessDown
   xbacklight -dec 5
 
@@ -188,8 +188,8 @@ super + Print
 super + w
   /usr/bin/google-chrome-stable %U
 
-# super + n
-  thunar
+# NNN
+  nnn
 
-super + F1
-  ~/.config/bspwm/scripts/keybindings_rofi.sh
+# super + F1
+#  ~/.config/bspwm/scripts/keybindings_rofi.sh
