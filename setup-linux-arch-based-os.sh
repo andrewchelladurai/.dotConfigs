@@ -13,13 +13,14 @@
 # Some steps below require custom aliases to be present for execution.
 
 # Move bash files to config dir and link to it from the home dir
-mkdir -p ~/.config/bash/
-mv -v ~/.bashrc ~/.config/bash/.bashrc
-mv -v ./bash_aliases ./bash_profile ~/.config/bash/
+mkdir -p ~/.config/bash/ && cd ~/.config/bash/
+wget -c https://raw.githubusercontent.com/andrewchelladurai/configs/master/.bashrc
+wget -c https://raw.githubusercontent.com/andrewchelladurai/configs/master/.bash_aliases
+wget -c https://raw.githubusercontent.com/andrewchelladurai/configs/master/.bash_profile
 ln -s ~/.config/bash/.bashrc ~/.bashrc
 ln -s ~/.config/bash/.bash_profile ~/.bash_profile
 
-# Now reload the  modifications
+# Now reload the  modifications or close the current terminal and reload a new one to load the new .bashrc file
 source ~/.bashrc
 
 # Disable Screen lock on lid-close, this is because I want to handle it myself
