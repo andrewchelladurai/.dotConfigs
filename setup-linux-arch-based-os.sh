@@ -47,7 +47,10 @@ systemctl restart systemd-logind.service
 
 # Install Jetbrains Mono Font : https://github.com/JetBrains/JetBrainsMono
 # Below will download latest version and place it in ~/.local/share/fonts/
+# Remove all the unecessary font styles
+cd ~/.local/share/fonts/
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
+rm JetBrains*Semi**ttf JetBrains*Italic**ttf JetBrainsMonoNL-*ttf JetBrainsMono-Extra*ttf
 
 # Install Font-Awesome fonts from https://fontawesome.com/download
 # Download the "Free for Web" package and move the TTF packages to ~/.local/share/fonts/
