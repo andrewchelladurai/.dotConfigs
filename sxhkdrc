@@ -12,32 +12,32 @@
 #
 
 #
-# WM independent hotkeys
+# wm independent hotkeys
 #
 
 # terminal emulator
 super + Return
-	xfce4-terminal
+   kitty
 
 # program launcher
 super + d
 	rofi -modi drun -show drun -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
+                -columns 2 -padding 50 -hide-scrollbar -terminal kitty \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
 # show open window
 super + shift + d
 	rofi -modi drun -show window -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
+                -columns 2 -padding 50 -hide-scrollbar -terminal kitty \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
-# show ssh sesssions
+# show ssh sessions
 # super + ctrl + d
 #	rofi -modi drun -show ssh -line-padding 4 \
-#                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
+#                -columns 2 -padding 50 -hide-scrollbar -terminal kitty \
 #                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
-# power-menu 
+# power-menu
 super + Escape
      ~/.config/rofi/powermenu.sh
 
@@ -165,7 +165,7 @@ XF86AudioLowerVolume
 # still
 XF86AudioMute
   amixer -D pulse sset Master toggle-mute
-  
+
 # amixer -q set Master toggle
 # Simple amixer command seems to have problems unmuting device
 
@@ -177,10 +177,7 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
   xbacklight -dec 5
 
-#
 # Screenshot
-#
-
 Print
   scrot ~/Pictures/Screenshot-$(date +%F_%T).png
 
@@ -188,15 +185,11 @@ super + Print
   ~/.config/bspwm/scripts/screenshot.sh
 
 # Application Shortcuts
-super + w 
+super + w
   /usr/bin/google-chrome-stable %U
 
-# super + n 
-  thunar  
+# super + n
+  thunar
 
-# Show Keybindings Help
 super + F1
   ~/.config/bspwm/scripts/keybindings_rofi.sh
-[andrew@theLaptop ~]$ 
-[andrew@theLaptop ~]$ 
-
