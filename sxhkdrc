@@ -190,6 +190,3 @@ super + w
 
 # NNN
   nnn
-
-# super + F1
-#  ~/.config/bspwm/scripts/keybindings_rofi.sh
