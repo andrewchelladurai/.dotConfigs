@@ -50,7 +50,7 @@ systemctl restart systemd-logind.service
 # Remove all the unecessary font styles
 cd ~/.local/share/fonts/
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
-rm JetBrains*Semi**ttf JetBrains*Italic**ttf JetBrainsMonoNL-*ttf JetBrainsMono-Extra*ttf
+rm JetBrains*Semi*ttf JetBrains*Italic*ttf JetBrainsMonoNL-*ttf JetBrainsMono-Extra*ttf
 
 # Install Font-Awesome fonts from https://fontawesome.com/download
 # Download the "Free for Web" package and move the TTF packages to ~/.local/share/fonts/
@@ -66,7 +66,7 @@ sudo pacman -S --needed bluez bluez-utils blueman && sudo systemctl enable --now
 sudo pacman -S nvidia-installer-dkms && sudo nvidia-installer-dkms && sudo systemctl reboot
 
 # Install commonly used applications from the main repo
-sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy android-udev onboard ncdu btop cmus nnn termdown calc alacritty
+sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy android-udev onboard ncdu btop nnn termdown calc alacritty
 sudo pacman -S --nodeps intellij-idea-community-edition # No depdendencies since the dependent JDK version may not be the latest.
 
 # Install commonly used applications from the AUR repo
