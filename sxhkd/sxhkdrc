@@ -11,6 +11,7 @@
 # pgrep -x sxhkd > /dev/null || sxhkd &
 #
 
+[andrew@theLaptop .dotfiles]$ cat sxhkd/sxhkdrc
 #
 # wm independent hotkeys
 #
@@ -30,12 +31,6 @@ super + shift + d
 	rofi -modi drun -show window -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar -terminal kitty \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
-
-# show ssh sessions
-# super + ctrl + d
-#	rofi -modi drun -show ssh -line-padding 4 \
-#                -columns 2 -padding 50 -hide-scrollbar -terminal kitty \
-#                -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
 # power-menu
 super + Escape
@@ -68,6 +63,9 @@ super + y
 # swap the current node and the biggest window
 super + g
 	bspc node -s biggest.window
+
+super + f
+    bspc node -t ~floating
 
 #
 # state/flags
@@ -162,7 +160,7 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
   amixer -q set Master 5%- unmute
 
-# Toggle AudioMute
+# Toggle Mute
 XF86AudioMute
   amixer -D pulse sset Master toggle-mute
 
@@ -173,7 +171,7 @@ XF86AudioMute
 XF86MonBrightnessUp
   xbacklight -inc 5
 
-# Brightness down
+# Brightness Down
 XF86MonBrightnessDown
   xbacklight -dec 5
 
@@ -188,5 +186,5 @@ super + Print
 super + w
   /usr/bin/google-chrome-stable %U
 
-# NNN
+super + n
   nnn
