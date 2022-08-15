@@ -67,7 +67,7 @@ sudo pacman -S --needed bluez bluez-utils blueman && sudo systemctl enable --now
 sudo pacman -S nvidia-installer-dkms && sudo nvidia-installer-dkms && sudo systemctl reboot
 
 # Install commonly used applications from the main repo
-sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy android-udev onboard ncdu btop nnn termdown calc kitty gitui
+sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy android-udev onboard ncdu btop nnn termdown calc kitty gitui github-cli
 sudo pacman -S --nodeps intellij-idea-community-edition # No depdendencies since the dependent JDK version may not be the latest.
 
 # Install commonly used applications from the AUR repo
