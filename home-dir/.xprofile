@@ -10,4 +10,7 @@
 # Restart Xsession for changes to take effect 
 #
 
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 [[ -f ~/.bash_profile ]] && . ~/.bash_profile
+
