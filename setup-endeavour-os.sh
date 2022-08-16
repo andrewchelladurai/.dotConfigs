@@ -70,6 +70,11 @@ sudo pacman -S --nodeps intellij-idea-community-edition # No depdendencies since
 # Install commonly used applications from the AUR repo
 yay -S google-chrome enpass-bin onlyoffice-bin nordvpn-bin android-studio rdfind activitywatch-bin gtypist typiskt cli-visualizer
 
+# Download and setup dotFiles for common apps that will be installed as part of setup
+mkdir ~/.dotConfigs/ && cd ~/.dotConfigs/
+git clone https://github.com/andrewchelladurai/.dotConfigs.git
+stow -nvR home-dir/ config-dir/
+
 # Remove all the unnecesary packages from the fresh-install
 sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info meld reflector reflector-simple stoken openconnect xed mpv eos-update-notifier eos-rankmirrors file-roller endeavouros-xfce4-terminal-colors endeavouros-theming lxappearance-gtk3 yad-eos eos-qogir-icons xterm nitrogen xfce4-terminal
 sudo pacman -Rsd --nodeps v4l-utils
