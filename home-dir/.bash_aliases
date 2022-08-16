@@ -38,10 +38,10 @@ alias kvmstop="sudo rmmod kvm_intel ; sudo rmmod kvm"
 # Start KVM emulation, by enabling the kernel module
 alias kvmstart="sudo insmod /lib/modules/$(uname -r)/kernel/arch/x86/kvm/kvm.ko ; sudo insmod /lib/modules/$(uname -r)/kernel/arch/x86/kvm/kvm-intel.ko"
 
-# Map NeoVim to vi
+# Map nvim to vi
 alias v="nvim"
 
-# Start nVim in Realonly mode when needed
+# Start nvim in Readonly mode when needed
 alias vr="nvim -R"
 
 # Make some possibly destructive commands more interactive.
