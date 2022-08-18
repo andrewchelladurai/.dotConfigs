@@ -18,18 +18,18 @@
 
 # terminal emulator
 super + Return
-   kitty
+   alacritty
 
 # program launcher
 super + d
 	rofi -modi drun -show drun -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal kitty \
+                -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
 # show open window
 super + shift + d
 	rofi -modi drun -show window -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal kitty \
+                -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
                 -show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"
 
 # power-menu
