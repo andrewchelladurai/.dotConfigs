@@ -1,5 +1,9 @@
+#!/bin/bash 
 
-# ln -s ~/.config/bash/.bash_profile ~/.config/.bash_profile
+#
+# https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_01.html
+# Should be present at location ~/.config/.bash_profile
+# 
 
 # load bashrc file
 if [ -x ~/.bashrc ]; then . ~/.bashrc; fi 
