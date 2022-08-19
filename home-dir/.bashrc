@@ -21,10 +21,10 @@
 [[ "$(whoami)" = "root" ]] && return
 
 # Run the welcome screen if it exists.
-[[ -e ~/.welcome_screen ]] && . ~/.config/.welcome_screen                                                         
+[[ -x ~/.welcome_screen ]] && . ~/.config/.welcome_screen
 
 # Source the bash_aliases file if it exists.
-[[ -e ~/.bash_aliases ]] && . ~/.bash_aliases
+[[ -x ~/.bash_aliases ]] && . ~/.bash_aliases
 
 # limits recursive functions
 [[ -z "$FUNCNEST" ]] && export FUNCNEST=100          
@@ -54,3 +54,4 @@ shopt -s histappend
 # Append commands to the history every time a prompt is shown,
 # instead of after closing the session.
 PROMPT_COMMAND='history -a'
+
