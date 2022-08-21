@@ -4,14 +4,6 @@
 " For this files details see : https://neovim.io/doc/user/starting.html#init.vim
 " For configuration that can be used in the file see : https://neovim.io/doc/user/quickref.html
 "
-" Do below to use this setup.
-"
-" mkdir -p ~/.config/nvim/ && cd ~/.config/nvim/
-" mv -v init.vim init.vim_original
-" wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/nvim-init.vim
-" mv -v nvim-init.vim init.vim
-" restart all instances on NVIM
-"
 
 " Set to auto read when a file is changed from the outside
 set autoread

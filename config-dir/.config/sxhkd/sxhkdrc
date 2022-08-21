@@ -3,15 +3,7 @@
 # Usually located in ~/.config/sxhkd/sxhkdrc on the local system
 # Original available @ https://github.com/EndeavourOS-Community-Editions/bspwm/blob/main/.config/sxhkd/sxhkdrc
 #
-# Do below to use this setup
-#
-# mkdir -p ~/.config/sxhkd/ && cd ~/.config/sxhkd/
-# mv -v sxhkdrc sxhkdrc_original
-# wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/sxhkdrc
-# pgrep -x sxhkd > /dev/null || sxhkd &
-#
 
-[andrew@theLaptop .dotfiles]$ cat sxhkd/sxhkdrc
 #
 # wm independent hotkeys
 #
@@ -177,10 +169,10 @@ XF86MonBrightnessDown
 
 # Screenshot
 Print
-  scrot ~/Pictures/Screenshot-$(date +%F_%T).png
+  ~/.config/bspwm/scripts/screenshot.sh
 
 super + Print
-  ~/.config/bspwm/scripts/screenshot.sh
+  scrot ~/Pictures/Screenshot-$(date +%F_%T).png
 
 # Application Shortcuts
 super + w

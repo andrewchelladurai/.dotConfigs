@@ -1,17 +1,7 @@
 #
 # Custom Bash Run Script : https://www.gnu.org/software/bash/
 # Manual : https://www.gnu.org/software/bash/manual/bash.html
-#
 # The RC is usually at location ~/.bashrc on the local system
-# However we are keeping all things consolidated in ~/.config/bash/ and refer to it via a symlink
-#
-# Do below to use this setup
-#
-# mkdir -p ~/.config/bash/ && cd ~/.config/bash/
-# mv -v .bashrc .bashrc_original
-# wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/.bashrc
-# ln -s ~/.config/bash/.bashrc ~/.config/.bashrc
-# Restart existing bash terminal sessions for changes to take effect
 #
 
 # If not running interactively, don't do anything

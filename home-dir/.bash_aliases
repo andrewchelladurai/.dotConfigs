@@ -6,15 +6,10 @@
 # Source the separate aliases file in ~/.bashrc as below
 # [[ -e ~/.bash_aliases ]] && . ~/.bash_aliases
 #
-# Do below to use this setup
-#
-# mkdir -p ~/.config/bash/ && cd ~/.config/bash/
-# mv -v .bash_aliases .bash_aliases_original
-# wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/.bash_aliases
-# Restart existing bash terminal sessions for changes to take effect
-#
 
+#
 # Upgrade system and remove unwanted packages, then uncomment the correct alias type to use.
+#
 # This is for debian based systems
 # alias upgradesys='sudo pkcon refresh && sudo pkcon -y update ; sudo apt autoremove -y && sudo apt autoclean -y'
 # This is for Arch based systems
