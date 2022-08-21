@@ -26,6 +26,9 @@ alias restartNMW='sudo systemctl restart network-manager'
 # restart networkmanager service using nm's own utility
 alias restartNMCli='nmcli networking off ; sleep 10 ; nmcli networking on'
 
+# restart networkmanager wifi radio
+alias restartNMCliWifi='nmcli radio wifi off ; sleep 10 ; nmcli radio wifi on'
+
 # LibVrt (VirtualBox Guests) and KVM (Android Emulators) conflict and do not run together.
 # Stop KVM emulation, by disabling the kernel module
 alias kvmstop="sudo rmmod kvm_intel ; sudo rmmod kvm"
