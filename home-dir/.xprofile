@@ -1,16 +1,23 @@
 #!/bin/sh
 
 #
-# Do below to use this setup
-#
-# mkdir -p ~/.config/shell-profile/ && cd ~/.config/shell-profile/
-# mv -v .xprofile .xprofile_original
-# wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/.xprofile
-# ln -s ~/.config/shell-profile/.xprofile ~/.xprofile
-# Restart Xsession for changes to take effect 
+# Variable definitions and assignments
 #
 
+# https://wiki.archlinux.org/title/java#Gray_window,_applications_not_resizing_with_WM,_menus_immediately_closing
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# POLYBAR Configuration
+export POLYBAR_WIDTH="98%"
+export POLYBAR_HEIGHT="33"
+export POLYBAR_OFFSET_X="1%"
+export POLYBAR_OFFSET_Y="1%"
+export POLYBAR_RADIUS="0"
+export POLYBAR_PAD_RIGHT="0"
+export POLYBAR_PAD_LEFT="0"
+export POLYBAR_MODULE_MARGIN="0"
+export POLYBAR_BORDER="0"
+
+# Load bashrc file if it exists
 [[ -f ~/.bash_profile ]] && . ~/.bash_profile
 
