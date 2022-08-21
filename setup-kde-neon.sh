@@ -1,38 +1,58 @@
 #
 # For Ubuntu Based Distros (KDE Specific)
-# Preferred Distro : KDE Neon
-# https://neon.kde.org/
+# Preferred Distro : KDE Neon : https://neon.kde.org/
 #
 
-# Convenient aliases for frequent commands are now a part of the .bash_aliases file.
-# Download and source the .bash_aliases file from the repo before proceeding. 
-# Some steps below require custom aliases to be present for execution.
+# Download the dotFiles repo 
+mkdir ~/.dotConfigs/ && cd ~/.dotConfigs/
+git clone https://github.com/andrewchelladurai/.dotConfigs.git
+stow -nvR home-dir/ config-dir/
+# Validate that the links are all present
+ls -la ~/ ~/.config/ | grep -i '^l' | tr -s " " | cut -d" " -f 9-11
 
-# Move bash files to config dir and link to it from the home dir
-mkdir -p ~/.config/bash/
-mv -v ~/.bashrc ~/.config/bash/
-ln -s ~/.bashrc ~/.config/bash/.bashrc
-ln -s ~/..bash_aliases ~/.config/bash/.bash_aliases
-ln -s ~/..bash_profile ~/.config/bash/.bash_profile
-
-# Now reload the  modifications
+# Reload the modifications or open a terminal to load the new .bashrc file
 source ~/.bashrc
+
+# Make links to actual content directories in a separate partition
+# Required only if the data partition is on a separate partition from OS mount-point
+rmdir ~/Documents/ ~/Downloads/ ~/Pictures/ ~/Videos/ ~/Music/
+ln -s /media/$(whoami)/Data/Documents/ Documents
+ln -s /media/$(whoami)/Data/Downloads/ Downloads
+ln -s /media/$(whoami)/Data/Volatile/ Volatile
+ln -s /media/$(whoami)/Media/Music/ Music
+ln -s /media/$(whoami)/Media/Pictures/ Pictures
+ln -s /media/$(whoami)/Media/Movies/ Videos
+
+# Download required Nerd fonts :
+# https://www.nerdfonts.com/font-downloads
+# https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
+# and place it in ~/.local/share/fonts/
+# 
+# DejaVuSansMono
+# FiraCode
+# JetBrainsMono
+# Noto
+# SourceCodePro
+#
+# Remove the unecessary font families from the extracts
+find . -type f -iname \*Windows*ttf -delete
+find . -type f -iname \*Mono.ttf -delete
+find . -type f -iname \*Semi*ttf -delete
+find . -type f -iname \*Extra*ttf -delete
+find . -type f -iname \*Black*ttf -delete
+find . -type f -iname \*Light*ttf -delete
+find . -type f -iname \*Medium*ttf -delete
+find . -type f -iname \*Thin*ttf -delete
+find . -type f -iname \*otf -delete
+find . -type f -iname \*Retina*ttf -delete
+find . -type f -iname \*Ext*ttf -delete
+rm Noto*Emoji*ttf Noto*Condensed*ttf Noto*Display*ttf
 
 # Remove all the unnecesary packages from the fresh-install
 TO-DO
 
 # Now do a dist-upgrade
 upgradesys
-
-# Make links to actual content directories in a separate partition
-# This is only required if the data partition is separate from the actual home mount
-# rmdir Documents/ Downloads/ Pictures/ Videos/ Music/
-# ln -s /media/$(whoami)/Data/Documents/ Documents
-# ln -s /media/$(whoami)/Data/Downloads/ Downloads
-# ln -s /media/$(whoami)/Data/Volatile/ Volatile
-# ln -s /media/$(whoami)/Media/Music/ Music
-# ln -s /media/$(whoami)/Media/Pictures/ Pictures
-# ln -s /media/$(whoami)/Media/Movies/ Videos
 
 # For capability to add PPA repositories
 sudo apt install -y software-properties-common software-properties-qt
