@@ -1,30 +1,19 @@
 #
-# For Arch Based Distros
-# Preferred Distro : Endeavour OS (BSPWM Community Edition)
+# Steps used to setup Endeavour OS (BSPWM Community Edition)
 # https://github.com/EndeavourOS-Community-Editions/bspwm
 #
 
-#
-# Pre-requisites
-#
+# Download the dotFiles repo 
+mkdir ~/.dotConfigs/ && cd ~/.dotConfigs/
+git clone https://github.com/andrewchelladurai/.dotConfigs.git
+stow -nvR home-dir/ config-dir/
+# Validate that the links are all present
+ls -la ~/ ~/.config/ | grep -i '^l' | tr -s " " | cut -d" " -f 9-11
 
-# Convenient aliases for frequent commands are now a part of the .bash_aliases file.
-# Download and source the .bash_aliases file from the repo before proceeding. 
-# Some steps below require custom aliases to be present for execution.
-
-# Move bash files to config dir and link to it from the home dir
-mkdir -p ~/.config/bash/ && cd ~/.config/bash/
-wget -c https://raw.githubusercontent.com/andrewchelladurai/configs/master/.bashrc
-wget -c https://raw.githubusercontent.com/andrewchelladurai/configs/master/.bash_aliases
-wget -c https://raw.githubusercontent.com/andrewchelladurai/configs/master/.bash_profile
-ln -s ~/.config/bash/.bashrc ~/.bashrc
-ln -s ~/.config/bash/.bash_profile ~/.bash_profile
-
-# Now reload the  modifications or close the current terminal and reload a new one to load the new .bashrc file
+# Reload the modifications or open a terminal to load the new .bashrc file
 source ~/.bashrc
 
-# Disable Screen lock on lid-close, this is because I want to handle it myself
-# and most times, the laptop will be connected to an external monitor with the lid closed
+# Disable Screen lock on lid-close.
 sudo vi /etc/systemd/logind.conf
   HandleLidSwitch=ignore
   HandleLidSwitchExternalPower=ignore
@@ -32,26 +21,39 @@ sudo vi /etc/systemd/logind.conf
 systemctl restart systemd-logind.service
 
 # Make links to actual content directories in a separate partition
-# This is only required if the data partition is separate from the actual home mount
-# rmdir Documents/ Downloads/ Pictures/ Videos/ Music/
-# ln -s /media/$(whoami)/Data/Documents/ Documents
-# ln -s /media/$(whoami)/Data/Downloads/ Downloads
-# ln -s /media/$(whoami)/Data/Volatile/ Volatile
-# ln -s /media/$(whoami)/Media/Music/ Music
-# ln -s /media/$(whoami)/Media/Pictures/ Pictures
-# ln -s /media/$(whoami)/Media/Movies/ Videos
+# Required only if the data partition is on a separate partition from OS mount-point
+rmdir ~/Documents/ ~/Downloads/ ~/Pictures/ ~/Videos/ ~/Music/
+ln -s /media/$(whoami)/Data/Documents/ Documents
+ln -s /media/$(whoami)/Data/Downloads/ Downloads
+ln -s /media/$(whoami)/Data/Volatile/ Volatile
+ln -s /media/$(whoami)/Media/Music/ Music
+ln -s /media/$(whoami)/Media/Pictures/ Pictures
+ln -s /media/$(whoami)/Media/Movies/ Videos
 
+# Download required Nerd fonts :
+# https://www.nerdfonts.com/font-downloads
+# https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
+# and place it in ~/.local/share/fonts/
+# 
+# DejaVuSansMono
+# FiraCode
+# JetBrainsMono
+# Noto
+# SourceCodePro
 #
-# Install necessary apps
-#
-
-# Install Jetbrains Mono Font : https://github.com/JetBrains/JetBrainsMono
-# Below will download latest version and place it in ~/.local/share/fonts/
-# Remove all the unecessary font styles
-cd ~/.local/share/fonts/
-wget -c https://github.com/Templarian/MaterialDesign-Font/raw/master/MaterialDesignIconsDesktop.ttf
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
-rm JetBrains*Semi*ttf JetBrains*Italic*ttf JetBrainsMonoNL-*ttf JetBrainsMono-Extra*ttf
+# Remove the unecessary font families from the extracts
+find . -type f -iname \*Windows*ttf -delete
+find . -type f -iname \*Mono.ttf -delete
+find . -type f -iname \*Semi*ttf -delete
+find . -type f -iname \*Extra*ttf -delete
+find . -type f -iname \*Black*ttf -delete
+find . -type f -iname \*Light*ttf -delete
+find . -type f -iname \*Medium*ttf -delete
+find . -type f -iname \*Thin*ttf -delete
+find . -type f -iname \*otf -delete
+find . -type f -iname \*Retina*ttf -delete
+find . -type f -iname \*Ext*ttf -delete
+rm Noto*Emoji*ttf Noto*Condensed*ttf Noto*Display*ttf
 
 # Do a dist-upgrade to get recent core updates
 upgradesys
@@ -69,11 +71,6 @@ sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy android-udev onb
 sudo pacman -S --nodeps intellij-idea-community-edition 
 # Install commonly used applications from the AUR repo
 yay -S google-chrome enpass-bin onlyoffice-bin nordvpn-bin android-studio rdfind activitywatch-bin gtypist typiskt cli-visualizer
-
-# Download and setup dotFiles for common apps that will be installed as part of setup
-mkdir ~/.dotConfigs/ && cd ~/.dotConfigs/
-git clone https://github.com/andrewchelladurai/.dotConfigs.git
-stow -nvR home-dir/ config-dir/
 
 # Remove all the unnecesary packages from the fresh-install
 sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info meld reflector reflector-simple stoken openconnect xed mpv eos-update-notifier eos-rankmirrors file-roller endeavouros-xfce4-terminal-colors endeavouros-theming lxappearance-gtk3 yad-eos eos-qogir-icons xterm nitrogen xfce4-terminal
