@@ -81,3 +81,10 @@ alias vpnd="nordvpn d"
 # Enable Screen Mirroring on when physical device screen is off
 # https://github.com/Genymobile/scrcpy#turn-screen-off
 alias scrcpy='scrcpy --turn-screen-off --stay-awake'
+
+# Make fc-list results easy to read
+alias fc-list="fc-list | cut -d":" -f 2-10 | sort"
+
+# Since we are using alacritty, force btop to start with UFT support
+alias btop="btop --utf-force"
+
