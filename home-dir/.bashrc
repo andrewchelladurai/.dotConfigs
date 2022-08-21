@@ -24,24 +24,3 @@
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
-#
-# The next section modifies the behavior of bash
-#
-
-# Set the default editor to vim.
-export EDITOR=nvim
-
-# Avoid successive duplicates in the bash command history.
-export HISTCONTROL=ignoredups
-
-# Set bash_history file_path to be in the cache directory
-export HISTFILE=/home/$USER/.cache/.bash_history
-
-# Append commands to the bash command history file (~/.bash_history)
-# instead of overwriting it.
-shopt -s histappend
-
-# Append commands to the history every time a prompt is shown,
-# instead of after closing the session.
-PROMPT_COMMAND='history -a'
-
