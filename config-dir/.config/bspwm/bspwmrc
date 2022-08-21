@@ -5,36 +5,30 @@
 # Usually located in ~/.config/bspwm/bspwmrc on the local system
 # Original available @ https://github.com/EndeavourOS-Community-Editions/bspwm/blob/main/.config/bspwm/bspwmrc
 #
-# Do below to use this setup
-#
-# mkdir -p ~/.config/bspwm/ && cd ~/.config/bspwm/
-# mv -v bspwmrc bspwmrc_original
-# wget https://raw.githubusercontent.com/andrewchelladurai/configs/master/bspwmrc
-# bspc wm -r
-#
-
-#
-# BPSC Config Section
-#
 
 # Merge both the laptop + external monitors.
-# bspc config merge_overlapping_monitors true
+#bspc config merge_overlapping_monitors true
 
 # Number of work-spaces
 bspc monitor -d A N D
 
-bspc config window_gap          3
+BW=3
+GAP=1
+PAD=10
+bspc config border_width $BW
+bspc config window_gap $GAP
+for side in top right bottom left ; do
+	bspc config ${side}_padding $PAD
+done
+
 bspc config split_ratio          0.53
-bspc config gapless_monocle      false
+bspc config gapless_monocle      true
 bspc config pointer_follows_focus true
 bspc config focus_follows_pointer true
 
 # Border
 bspc config border_width         3
 bspc config borderless_monocle   true
-bspc config focused_border_color        "#6c71c4"
-bspc config normal_border_color         "#073642"
-bspc config active_border_color         "#073642"
 
 # Window / Workspace rules
 bspc rule -a google-chrome desktop='^2'
@@ -82,3 +76,4 @@ xsetroot -cursor_name left_ptr &
 
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh
+
