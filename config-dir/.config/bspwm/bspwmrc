@@ -6,19 +6,19 @@
 # Original available @ https://github.com/EndeavourOS-Community-Editions/bspwm/blob/main/.config/bspwm/bspwmrc
 #
 
+# Load Configuration variable file
+. ~/.dotConfigs/config-dir/set-variables.sh
+
 # Merge both the laptop + external monitors.
 #bspc config merge_overlapping_monitors true
 
 # Number of work-spaces
 bspc monitor -d A N D
 
-BW=3
-GAP=1
-PAD=10
-bspc config border_width $BW
-bspc config window_gap $GAP
+bspc config border_width $BSPWM_BORDER
+bspc config window_gap $BSPWM_GAP
 for side in top right bottom left ; do
-	bspc config ${side}_padding $PAD
+	bspc config ${side}_padding $BSPWM_PAD
 done
 
 bspc config split_ratio          0.53
@@ -76,4 +76,6 @@ xsetroot -cursor_name left_ptr &
 
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh
+
+dunstify $POLYBAR_HEIGHT
 
