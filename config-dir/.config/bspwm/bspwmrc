@@ -9,25 +9,29 @@
 # Load Configuration variable file
 . ~/.dotConfigs/config-dir/set-variables.sh
 
+#
+# BPSWM related configuration setup
+#
+
 # Merge both the laptop + external monitors.
 #bspc config merge_overlapping_monitors true
 
-# Number of work-spaces
 bspc monitor -d A N D
+bspc config split_ratio $BSPWM_SPLIT_RATIO
 
-bspc config border_width $BSPWM_BORDER
+# Gaps and Padding
 bspc config window_gap $BSPWM_GAP
 for side in top right bottom left ; do
 	bspc config ${side}_padding $BSPWM_PAD
 done
+bspc config gapless_monocle true
 
-bspc config split_ratio          0.53
-bspc config gapless_monocle      true
+# Focus
 bspc config pointer_follows_focus true
 bspc config focus_follows_pointer true
 
 # Border
-bspc config border_width         3
+bspc config border_width $BSPWM_BORDER
 bspc config borderless_monocle   true
 
 # Window / Workspace rules
@@ -77,5 +81,8 @@ xsetroot -cursor_name left_ptr &
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh
 
-dunstify $POLYBAR_HEIGHT
+#
+# Notify that restart is completed
+#
+dunstify "Restarted BSPWM"
 
