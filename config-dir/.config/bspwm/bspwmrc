@@ -13,17 +13,22 @@
 # BPSWM related configuration setup
 #
 
-# Merge both the laptop + external monitors.
-#bspc config merge_overlapping_monitors true
-
+# Monitors
 bspc monitor -d A N D
+#bspc config merge_overlapping_monitors true
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+
 bspc config split_ratio $BSPWM_SPLIT_RATIO
+bspc config single_monocle true
+bspc config ignore_ewmh_focus true
 
 # Gaps and Padding
 bspc config window_gap $BSPWM_GAP
 for side in top right bottom left ; do
 	bspc config ${side}_padding $BSPWM_PAD
 done
+bspc config gapless_monocle true
 bspc config gapless_monocle true
 
 # Focus
