@@ -13,7 +13,7 @@
 # This is for debian based systems
 # alias upgradesys='sudo pkcon refresh && sudo pkcon -y update ; sudo apt autoremove -y && sudo apt autoclean -y'
 # This is for Arch based systems
-# alias upgradesys='sudo pacman -Syyu ; sudo pacman -Qtdq | sudo pacman -Rns - ;'
+alias upgradesys='sudo pacman -Syyu ; sudo pacman -Qtdq | sudo pacman -Rns - ;'
 
 # This below is used spcifically in BSPWM
 # we first need to save profiles using autorandr for this to work
