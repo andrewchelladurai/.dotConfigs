@@ -5,8 +5,8 @@
 #
 
 # Load Configuration variable file
-if [ -x ~/.dotConfigs/config-dir/set-variables.sh ]; then 
-    . ~/.dotConfigs/config-dir/set-variables.sh
+if [ -x ~/.dotConfigs/scripts/set-variables.sh ]; then 
+    . ~/.dotConfigs/scripts/set-variables.sh
 fi
 
 # Load bashrc file if it exists
