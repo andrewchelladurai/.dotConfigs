@@ -7,18 +7,14 @@
 # [[ -e ~/.bash_aliases ]] && . ~/.bash_aliases
 #
 
-#
-# Upgrade system and remove unwanted packages, then uncomment the correct alias type to use.
-#
 # This is for debian based systems
 # alias upgradesys='sudo pkcon refresh && sudo pkcon -y update ; sudo apt autoremove -y && sudo apt autoclean -y'
 # This is for Arch based systems
 alias upgradesys='sudo pacman -Syyu ; sudo pacman -Qtdq | sudo pacman -Rns - ;'
 
 # This below is used spcifically in BSPWM
-# we first need to save profiles using autorandr for this to work
-alias athommonoff='autorandr --change atHomeExternalNotConnected && sleep 3 && bspc wm -r'
-alias athommonon='autorandr --change atHomeExternalConnected && sleep 3 && bspc wm -r'
+alias activeMonitorLaptopScreen='~/.dotConfigs/scripts/activeMonitorLaptopScreen.sh && sleep 2 && bspc wm -r'
+alias activeMonitorExternalDisplay='~/.dotConfigs/scripts/activeMonitorExternalDisplay.sh && sleep 2 && bspc wm -r'
 
 # restart networkmanager service using system control
 alias restartNMW='sudo systemctl restart network-manager'
