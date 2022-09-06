@@ -17,7 +17,7 @@ export ACTIVE_MONITOR_HEIGHT=$(xrandr --listactivemonitors | grep -v Monitors | 
 export CONTENT_PADDING=13
 
 # BSPWM variables
-export BSPWM_GAP=3
+export BSPWM_GAP=0
 export BSPWM_PAD=$CONTENT_PADDING
 export BSPWM_BORDER=$BSPWM_GAP
 export BSPWM_SPLIT_RATIO=0.53
