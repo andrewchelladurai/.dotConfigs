@@ -147,7 +147,7 @@ set wildmode=full
 set cursorline
 
 " highlight the column the cursor is on
-set  cursorcolumn
+"set  cursorcolumn
 
 " highlight column 80 with the color
 set colorcolumn=80
