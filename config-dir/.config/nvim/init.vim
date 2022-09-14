@@ -21,7 +21,6 @@ set background=dark
 set backspace=indent,eol,nostop
 set writebackup
 set backupdir=~/.cache/nvim/backup/
-set nobelloff
 set linebreak
 set breakat=^I!@*-+;:,./?
 set breakindent
@@ -37,9 +36,9 @@ set concealcursor=nc
 set confirm
 set copyindent
 set nocursorbind
-set cursorcolumn
+"set cursorcolumn
 set cursorline
-set cursorlineopt=number
+set cursorlineopt=line
 set delcombine
 set endofline
 set equalalways
@@ -48,7 +47,7 @@ set expandtab
 set fileformats=unix
 set fileignorecase
 set fixendofline
-set fillchars=stl:^,stlnc:=,vert:│,fold:·,diff:-
+"set fillchars=stl:.,stlnc:=,vert:│,fold:·,diff:-
 set foldclose=all
 set foldcolumn=auto
 set foldenable
@@ -67,7 +66,7 @@ set laststatus=3
 set lazyredraw
 set linebreak
 set list
-set lcs=tab:<->,trail:-,eol:<,multispace:.,leadmultispace:~
+set listchars=eol:¬,lead:\ ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,multispace:···⬝,
 set magic
 set matchpairs=(:),{:},[:],<:>,':',":"
 set maxmapdepth=969
@@ -82,7 +81,6 @@ set selectmode=mouse
 set mousefocus
 set mousemodel=popup_setpos
 set mousehide
-set mousescroll=ver:5,hor:2
 " set mouseshape=i:beam,r:beam,s:updown,sd:cross,m:no,ml:up-arrow,v:rightup-arrow
 set number
 set relativenumber
@@ -93,7 +91,7 @@ set scrolloff=3
 set noshelltemp
 set shiftround
 set shiftwidth=4
-set showbreak='+++ '
+set showbreak=+++ 
 set showcmd
 set showmatch
 set showmode
@@ -104,12 +102,11 @@ set smartcase
 set smartindent
 set smarttab
 set nospell
-set spelloptions=camel,noplainbuffer
 set spellsuggest=best
 set splitbelow
 set splitright
 set directory=~/.cache/nvim/swap/
-set syntax
+set syntax=on
 set tagcase=followscs
 set undodir=~/.cache/nvim/undo/
 set undofile
