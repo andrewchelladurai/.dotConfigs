@@ -34,7 +34,7 @@ set buflisted
 set clipboard=unnamedplus
 set cmdheight=3
 set cmdwinheight=13
-set colorcolumn=86
+"set colorcolumn=86
 set completeopt=menuone,preview
 set concealcursor=nc
 set confirm
