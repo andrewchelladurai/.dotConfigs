@@ -66,11 +66,11 @@ sudo pacman -S --needed bluez bluez-utils blueman && sudo systemctl enable --now
 sudo pacman -S nvidia-installer-dkms && sudo nvidia-installer-dkms && sudo systemctl reboot
 
 # Install commonly used applications from the main repo
-sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy android-udev onboard ncdu btop nnn termdown calc kitty github-cli lazygit
+sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy onboard ncdu btop termdown kitty github-cli lazygit
 # No depdendencies since the dependent JDK version may not be the latest.
-sudo pacman -S --nodeps intellij-idea-community-edition 
+sudo pacman -S --nodeps intellij-idea-community-edition
 # Install commonly used applications from the AUR repo
-yay -S google-chrome enpass-bin onlyoffice-bin nordvpn-bin android-studio rdfind activitywatch-bin gtypist typiskt cli-visualizer
+yay -S google-chrome enpass-bin onlyoffice-bin android-studio rdfind gtypist typiskt cli-visualizer
 
 # Remove all the unnecesary packages from the fresh-install
 sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info meld reflector reflector-simple stoken openconnect xed mpv eos-update-notifier eos-rankmirrors file-roller endeavouros-xfce4-terminal-colors endeavouros-theming lxappearance-gtk3 yad-eos eos-qogir-icons xterm nitrogen xfce4-terminal
