@@ -14,7 +14,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export ACTIVE_MONITOR_WIDTH=$(xrandr --listactivemonitors | grep -v Monitors | cut -d " " -f 4 | cut -d"/" -f 1)
 export ACTIVE_MONITOR_HEIGHT=$(xrandr --listactivemonitors | grep -v Monitors | cut -d "x" -f 2 | cut -d"/" -f 1)
 # Padding used on the monitor content
-export CONTENT_PADDING=13
+export CONTENT_PADDING=0
 
 # BSPWM variables
 export BSPWM_GAP=0
