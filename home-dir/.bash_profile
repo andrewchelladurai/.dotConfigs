@@ -28,7 +28,7 @@ shopt -s histappend
 PROMPT_COMMAND='history -a'
 
 # limits recursive functions
-[[ -z "$FUNCNEST" ]] && export FUNCNEST=100          
+[[ -z "$FUNCNEST" ]] && export FUNCNEST=100
 
 ## Use the up and down arrow keys for finding a command in history
 ## (you can write some initial letters of the command first).
