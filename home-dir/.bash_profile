@@ -40,5 +40,5 @@ bind '"\e[B":history-search-forward'
 #
 if [ -x ~/.bashrc ]; then
     . ~/.bashrc;
-fi 
+fi
 
