@@ -39,25 +39,11 @@ ln -s /media/$(whoami)/Media/Movies/ Videos
 # https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
 # and place it in ~/.local/share/fonts/
 # 
-# DejaVuSansMono
-# FiraCode
-# JetBrainsMono
-# Noto
-# SourceCodePro
-#
-# Remove the unecessary font families from the extracts
-find . -type f -iname \*Windows*ttf -delete
-find . -type f -iname \*Mono.ttf -delete
-find . -type f -iname \*Semi*ttf -delete
-find . -type f -iname \*Extra*ttf -delete
-find . -type f -iname \*Black*ttf -delete
-find . -type f -iname \*Light*ttf -delete
-find . -type f -iname \*Medium*ttf -delete
-find . -type f -iname \*Thin*ttf -delete
-find . -type f -iname \*otf -delete
-find . -type f -iname \*Retina*ttf -delete
-find . -type f -iname \*Ext*ttf -delete
-rm Noto*Emoji*ttf Noto*Condensed*ttf Noto*Display*ttf
+
+cd ~/.local/share/fonts/
+wget -c https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete.ttf
+wget -c https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf
+wget -c https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete.ttf
 
 # Do a dist-upgrade to get recent core updates
 upgradesys
