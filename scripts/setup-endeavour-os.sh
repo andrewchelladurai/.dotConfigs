@@ -3,12 +3,16 @@
 # https://github.com/EndeavourOS-Community-Editions/bspwm
 #
 
-# Download the dotFiles repo 
-mkdir ~/.dotConfigs/ && cd ~/.dotConfigs/
+# Download the dotFiles repo
+cd ~/
 git clone https://github.com/andrewchelladurai/.dotConfigs.git
+cd ~/.dotConfigs/
+
+# Install stow and simulate restoring the config files to ensure no conflicts exist.
+# If any folders exist then remove them and retry stow simulation.
+# When the simulation is sucessfull, do it without the flag.
+sudo pacman -S stow
 stow -nvR home-dir/ config-dir/
-# Validate that the links are all present
-ls -la ~/ ~/.config/ | grep -i '^l' | tr -s " " | cut -d" " -f 9-11
 
 # Reload the modifications or open a terminal to load the new .bashrc file
 source ~/.bashrc
