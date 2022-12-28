@@ -11,7 +11,7 @@ cd ~/.dotConfigs/
 # Install stow and simulate restoring the config files to ensure no conflicts exist.
 # If any folders exist then remove them and retry stow simulation.
 # When the simulation is sucessfull, do it without the flag.
-sudo pacman -S stow
+sudo pacman -Syu stow
 stow -nvR home-dir/ config-dir/
 
 # Reload the modifications or open a terminal to load the new .bashrc file
@@ -63,18 +63,18 @@ rm Noto*Emoji*ttf Noto*Condensed*ttf Noto*Display*ttf
 upgradesys
 
 # Install Bluetooth Stack and start the service at each reboot and also immediately
-sudo pacman -S --needed bluez bluez-utils blueman && sudo systemctl enable --now bluetooth
+sudo pacman -Syu --needed bluez bluez-utils blueman && sudo systemctl enable --now bluetooth
 
 # Install Nvidia Drivers, this will replace the open-source nouveau drivers.
 # A reboot is needed after the reinstall
-sudo pacman -S nvidia-inst && nvidia-inst && sudo systemctl reboot
+sudo pacman -Syu nvidia-inst && nvidia-inst && sudo systemctl reboot
 
 # Install commonly used applications from the main repo
-sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy onboard ncdu btop termdown kitty github-cli lazygit
+sudo pacman -Syu neovim sqlite wireguard-tools jdk-openjdk scrcpy onboard ncdu btop termdown kitty github-cli lazygit
 # No depdendencies since the dependent JDK version may not be the latest.
-sudo pacman -S --nodeps intellij-idea-community-edition
+sudo pacman -Syu --nodeps intellij-idea-community-edition
 # Install commonly used applications from the AUR repo
-yay -S google-chrome enpass-bin onlyoffice-bin android-studio rdfind gtypist typiskt cli-visualizer
+yay -Syu google-chrome enpass-bin onlyoffice-bin android-studio rdfind gtypist typiskt cli-visualizer
 
 # Remove all the unnecesary packages from the fresh-install
 sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info meld reflector reflector-simple stoken openconnect xed mpv eos-update-notifier eos-rankmirrors file-roller endeavouros-xfce4-terminal-colors endeavouros-theming lxappearance-gtk3 yad-eos eos-qogir-icons xterm nitrogen xfce4-terminal
