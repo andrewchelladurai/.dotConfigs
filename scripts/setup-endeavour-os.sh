@@ -18,7 +18,7 @@ sudo vi /etc/systemd/logind.conf
   HandleLidSwitch=ignore
   HandleLidSwitchExternalPower=ignore
   HandleLidSwitchDocked=ignore
-systemctl restart systemd-logind.service
+sudo systemctl restart systemd-logind.service
 
 # Make links to actual content directories in a separate partition
 # Required only if the data partition is on a separate partition from OS mount-point
@@ -63,7 +63,7 @@ sudo pacman -S --needed bluez bluez-utils blueman && sudo systemctl enable --now
 
 # Install Nvidia Drivers, this will replace the open-source nouveau drivers.
 # A reboot is needed after the reinstall
-sudo pacman -S nvidia-installer-dkms && sudo nvidia-installer-dkms && sudo systemctl reboot
+sudo pacman -S nvidia-inst && nvidia-inst && sudo systemctl reboot
 
 # Install commonly used applications from the main repo
 sudo pacman -S neovim sqlite wireguard-tools jdk-openjdk scrcpy onboard ncdu btop termdown kitty github-cli lazygit
