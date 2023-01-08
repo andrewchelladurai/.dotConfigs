@@ -38,7 +38,7 @@ ln -s /media/$(whoami)/Media/Movies/ Videos
 # https://www.nerdfonts.com/font-downloads
 # https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
 # and place it in ~/.local/share/fonts/
-# 
+#
 
 cd ~/.local/share/fonts/
 wget -c https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete.ttf
@@ -63,7 +63,7 @@ sudo pacman -Syu --nodeps intellij-idea-community-edition
 yay -Syu google-chrome enpass-bin onlyoffice-bin android-studio rdfind gtypist typiskt cli-visualizer
 
 # Remove all the unnecesary packages from the fresh-install
-sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info meld reflector reflector-simple stoken openconnect xed mpv eos-update-notifier eos-rankmirrors file-roller endeavouros-xfce4-terminal-colors endeavouros-theming lxappearance-gtk3 yad-eos eos-qogir-icons xterm nitrogen xfce4-terminal
+sudo pacman -Rs thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman htop firewalld firefox vi eos-quickstart welcome eos-log-tool eos-apps-info meld reflector reflector-simple stoken openconnect xed mpv eos-update-notifier eos-rankmirrors file-roller endeavouros-xfce4-terminal-colors endeavouros-theming lxappearance-gtk3 yad-eos eos-qogir-icons xterm nitrogen xfce4-terminal networkmanager-openconnect
 sudo pacman -Rsd --nodeps v4l-utils
 
 # Now do a dist-upgrade again to clear unwanted dependencies
