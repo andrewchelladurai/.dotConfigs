@@ -14,7 +14,7 @@
 #
 
 # Monitors
-bspc monitor -d A N D
+bspc monitor -d & R U
 #bspc config merge_overlapping_monitors true
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
