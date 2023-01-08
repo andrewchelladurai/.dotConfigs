@@ -1,14 +1,14 @@
 "
-"Customizations for Neovim : https://neovim.io/
+" Customizations for Neovim : https://neovim.io/
 "
-"The config must be placed at
-"~/.config/nvim/init.vim o nthe local system.
+" The config must be placed at
+" ~/.config/nvim/init.vim on the local system.
 "
-"For this files details see
-"https://neovim.io/doc/user/starting.html#init.vim
+" For this file's details see
+" https://neovim.io/doc/user/starting.html#init.vim
 "
-"Tips : https://neovim.io/doc/user/tips.html
-"Tabs : https://neovim.io/doc/user/tabpage.html
+" Tips : https://neovim.io/doc/user/tips.html
+" Tabs : https://neovim.io/doc/user/tabpage.html
 "
 
 """"""""""""""""""
@@ -17,6 +17,7 @@
 " https://neovim.io/doc/user/quickref.html
 " https://neovim.io/doc/user/quickref.html#option-list
 """"""""""""""""""
+
 
 set autochdir
 set autoindent
@@ -134,35 +135,43 @@ set writebackup
 
 " Map leader to comma
 let mapleader = ","
+
 " Fast saving
 nmap <leader>w :w!<cr>
+
 " Disable highlight when <leader><cr> is pressed
 nnoremap <leader><cr> set hlsearch! hlsearch?<CR>
+
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 map <leader>t<leader> :tabnext
+
 " You can split the window in Vim by typing :split or :vsplit.
 " Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
 " Resize split windows using arrow keys by pressing:
 " CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
 noremap <c-up> <c-w>+
 noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
+
 " Remap VIM 0 to first non-blank character
 map 0 ^
+
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
