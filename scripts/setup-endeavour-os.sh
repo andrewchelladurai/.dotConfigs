@@ -34,6 +34,11 @@ ln -s /media/$(whoami)/Media/Music/ Music
 ln -s /media/$(whoami)/Media/Pictures/ Pictures
 ln -s /media/$(whoami)/Media/Movies/ Videos
 
+# Create necessary folders
+mkdir -p ~/.tools/sdk/{android,flutter,dart,go}
+mkdir -p ~/Documents/Projects/{Mobile,Web,Desktop,Api}
+mkdir -p ~/Documents/Projects/Mobile/{Android,iOS}
+
 # Download required Nerd fonts :
 # https://www.nerdfonts.com/font-downloads
 # https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
