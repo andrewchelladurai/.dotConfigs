@@ -85,8 +85,6 @@ xsetroot -cursor_name left_ptr &
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh
 
-#
 # Notify that restart is completed
-#
 dunstify "Restarted BSPWM"
 
