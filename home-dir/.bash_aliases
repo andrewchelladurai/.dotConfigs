@@ -8,13 +8,7 @@
 #
 
 # This is for debian based systems
-# alias upgradesys='sudo pkcon refresh && sudo pkcon -y update ; sudo apt autoremove -y && sudo apt autoclean -y'
-# This is for Arch based systems
-alias upgradesys='yay -Syyu ; sudo pacman -Syyu ; sudo pacman -Qtdq | sudo pacman -Rns - ;'
-
-# This below is used spcifically in BSPWM
-alias activeMonitorLaptopScreen='~/.dotConfigs/scripts/activeMonitorLaptopScreen.sh && sleep 2 && bspc wm -r'
-alias activeMonitorExternalDisplay='~/.dotConfigs/scripts/activeMonitorExternalDisplay.sh && sleep 2 && bspc wm -r'
+alias upgradesys='sudo pkcon refresh && sudo pkcon -y update ; sudo apt autoremove -y && sudo apt autoclean -y'
 
 # restart networkmanager service using system control
 alias restartNMW='sudo systemctl restart network-manager'
@@ -78,7 +72,4 @@ alias scrcpy='scrcpy --turn-screen-off --stay-awake'
 
 # Make fc-list results easy to read
 alias fc-list="fc-list | cut -d":" -f 2-10 | sort"
-
-# Since we are using alacritty, force btop to start with UFT support
-alias btop="btop --utf-force"
 
