@@ -10,7 +10,7 @@ adb shell pm grant com.oasisfeng.greenify android.permission.WRITE_SECURE_SETTIN
 adb shell pm grant com.oasisfeng.greenify android.permission.GET_APP_OPS_STATS
 adb shell pm grant com.oasisfeng.greenify android.permission.READ_LOGS
 adb shell pm grant com.oasisfeng.greenify android.permission.DUMP
-# Restart Greenify once for the rights to take effect
+# Restart Greenify for changes to be effective immediately
 adb shell am force-stop com.oasisfeng.greenify
 
 ###
@@ -25,7 +25,6 @@ adb shell pm grant net.dinglisch.android.taskerm android.permission.SET_MEDIA_KE
 
 # Read System Logs (Context - Event - LogCat Entry)
 adb shell pm grant net.dinglisch.android.taskerm android.permission.READ_LOGS
-adb shell am force-stop net.dinglisch.android.taskerm
 
 # Volume Key Long Press Handling (Context - Event - Hardware - Volume Long Press)
 adb shell pm grant net.dinglisch.android.taskerm android.permission.SET_VOLUME_KEY_LONG_PRESS_LISTENER
@@ -55,6 +54,9 @@ adb shell pm grant net.dinglisch.android.taskerm android.permission.BIND_ACCESSI
 adb shell pm grant net.dinglisch.android.taskerm android.permission.ANSWER_PHONE_CALLS 
 adb shell pm grant net.dinglisch.android.taskerm android.permission.CALL_PHONE
 
+# Restart Tasker for changes to be effective immediately
+adb shell am force-stop net.dinglisch.android.taskerm
+
 ###
 # Give AutoApps the rights it deserves and needs
 # https://play.google.com/store/apps/details?id=com.joaomgcd.autoappshub
@@ -80,6 +82,7 @@ adb shell pm grant com.joaomgcd.autowear android.permission.WRITE_SECURE_SETTING
 adb -d shell appops set com.joaomgcd.join SYSTEM_ALERT_WINDOW allow
 adb shell pm grant com.joaomgcd.join android.permission.WRITE_SECURE_SETTINGS
 adb shell pm grant com.joaomgcd.join android.permission.READ_LOGS
+# Restart Join for changes to be effective immediately
 adb shell am force-stop com.joaomgcd.join
 
 # Make XDA Navigation Gestures useful
