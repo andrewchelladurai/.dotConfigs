@@ -78,6 +78,7 @@ adb shell pm grant com.joaomgcd.autowear android.permission.WRITE_SECURE_SETTING
 
 ###
 # Give Join Clipboard Permission on Android 10
+# https://joaoapps.com/AutoApps/Help/Info/com.joaomgcd.join/android_10_read_logs.html
 # https://play.google.com/store/apps/details?id=com.joaomgcd.join
 adb -d shell appops set com.joaomgcd.join SYSTEM_ALERT_WINDOW allow
 adb shell pm grant com.joaomgcd.join android.permission.WRITE_SECURE_SETTINGS
