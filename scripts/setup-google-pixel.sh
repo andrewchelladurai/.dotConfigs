@@ -16,6 +16,7 @@ adb shell am force-stop com.oasisfeng.greenify
 ###
 # Give Tasker the rights it deserves and needs
 # https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm
+# https://github.com/joaomgcd/Tasker-Permissions/
 
 # Check running services (Context - Application)
 adb shell pm grant net.dinglisch.android.taskerm android.permission.DUMP
