@@ -21,39 +21,11 @@ adb shell am force-stop com.oasisfeng.greenify
 # Check running services (Context - Application)
 adb shell pm grant net.dinglisch.android.taskerm android.permission.DUMP
 
-# Media Key Press Handling (Context - State - Media Button)
-adb shell pm grant net.dinglisch.android.taskerm android.permission.SET_MEDIA_KEY_LISTENER
-
 # Read System Logs (Context - Event - LogCat Entry)
 adb shell pm grant net.dinglisch.android.taskerm android.permission.READ_LOGS
 
-# Volume Key Long Press Handling (Context - Event - Hardware - Volume Long Press)
-adb shell pm grant net.dinglisch.android.taskerm android.permission.SET_VOLUME_KEY_LONG_PRESS_LISTENER
-
 # Write Secure Settings (Action - Settings - Custom Setting)
 adb shell pm grant net.dinglisch.android.taskerm android.permission.WRITE_SECURE_SETTINGS
-
-# Change System Locale
-adb shell pm grant net.dinglisch.android.taskerm android.permission.CHANGE_CONFIGURATION
-
-# Draw over other apps for web screens
-adb shell pm grant net.dinglisch.android.taskerm android.permission.SYSTEM_ALERT_WINDOW
-
-# To lock screen + other administrative actions
-adb shell pm grant net.dinglisch.android.taskerm android.permission.BIND_DEVICE_ADMIN
-
-# To react to notifications received, cleared and clicked from other apps
-adb shell pm grant net.dinglisch.android.taskerm android.permission.BIND_NOTIFICATION_LISTENER_SERVICE
-
-# To react to app changes, get app information, run times and more!
-adb shell pm grant net.dinglisch.android.taskerm android.permission.PACKAGE_USAGE_STATS
-
-# Use accessibility service to detect app launches and other information
-adb shell pm grant net.dinglisch.android.taskerm android.permission.BIND_ACCESSIBILITY_SERVICE
-
-# Phone Calls
-adb shell pm grant net.dinglisch.android.taskerm android.permission.ANSWER_PHONE_CALLS 
-adb shell pm grant net.dinglisch.android.taskerm android.permission.CALL_PHONE
 
 # Restart Tasker for changes to be effective immediately
 adb shell am force-stop net.dinglisch.android.taskerm
@@ -68,14 +40,20 @@ adb shell pm grant com.joaomgcd.autotools android.permission.READ_LOGS
 # Secure Settings for AutoTools
 adb shell pm grant com.joaomgcd.autotools android.permission.WRITE_SECURE_SETTINGS
 
-# Remove screen recording warning from AutoInput
-adb shell appops set com.joaomgcd.autoinput PROJECT_MEDIA allow
+# Restart AutoTools for changes to be effective immediately
+adb shell am force-stop com.joaomgcd.autotools
 
 # Secure Settings for AutoInput (not sure exactly which action from AI needs secure settings)
 adb shell pm grant com.joaomgcd.autoinput android.permission.WRITE_SECURE_SETTINGS
 
+# Restart AutoInput for changes to be effective immediately
+adb shell am force-stop com.joaomgcd.autoinput
+
 # Secure Settings for AutoWear
 adb shell pm grant com.joaomgcd.autowear android.permission.WRITE_SECURE_SETTINGS
+
+# Restart AutoWear for changes to be effective immediately
+adb shell am force-stop com.joaomgcd.autowear
 
 ###
 # Give Join Clipboard Permission on Android 10
