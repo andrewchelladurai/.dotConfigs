@@ -20,6 +20,14 @@ export HISTFILE=/home/$USER/.cache/.bash_history
 # instead of overwriting it.
 shopt -s histappend
 
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1614
+HISTFILESIZE=1613
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
 # Append commands to the history every time a prompt is shown,
 # instead of after closing the session.
 PROMPT_COMMAND='history -a'
@@ -31,6 +39,10 @@ PROMPT_COMMAND='history -a'
 ## (you can write some initial letters of the command first).
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
 
 #
 # load bashrc file
