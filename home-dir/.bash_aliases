@@ -61,15 +61,7 @@ alias showports='netstat -tulanp'
 # Make wget start with continue option by default
 alias wget='wget -c'
 
-# Nordvpn related commands (QuickConnect and Disconnect)
-alias vpnc="nordvpn c"
-alias vpnd="nordvpn d"
-
 # Scrcpy commands : https://github.com/Genymobile/scrcpy 
 # Enable Screen Mirroring on when physical device screen is off
 # https://github.com/Genymobile/scrcpy#turn-screen-off
 alias scrcpy='scrcpy --turn-screen-off --stay-awake'
-
-# Make fc-list results easy to read
-alias fc-list="fc-list | cut -d":" -f 2-10 | sort"
-
