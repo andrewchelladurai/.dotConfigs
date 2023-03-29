@@ -69,6 +69,10 @@ https://github.com/ActivityWatch/activitywatch/releases
 sudo apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 sudo adduser $(whoami) kvm
 
+# Install necessary packages for Flutter Development
+# https://docs.flutter.dev/get-started/install/linux
+sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+
 # Install necessary apps
 sudo apt install -y kubuntu-restricted-extras git vlc sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk
 sudo apt-get install -y --no-install-recommends libreoffice
