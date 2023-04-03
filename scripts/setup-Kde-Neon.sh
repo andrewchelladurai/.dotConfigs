@@ -63,6 +63,12 @@ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 # Download and install the latest release of ActivityWatch Timetracker
 https://github.com/ActivityWatch/activitywatch/releases
 
+# Install Lazygit
+mkdir -p ~/Tools/lazygit/ && cd ~/Tools/lazygit/
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar -xvf lazygit.tar.gz
+
 # For Android AVD emulation performance, installl KVM packages for Linux
 # https://developer.android.com/studio/run/emulator-acceleration?utm_source=android-studio#vm-linux
 sudo apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
@@ -71,6 +77,10 @@ sudo adduser $(whoami) kvm
 # Install necessary apps
 sudo apt install -y kubuntu-restricted-extras git vlc sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk
 sudo apt-get install -y --no-install-recommends libreoffice
+
+# Install packages necessary for Flutter
+# https://docs.flutter.dev/get-started/install/linux
+sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
 
 # Install proprietary drivers
 sudo ubuntu-drivers autoinstall
