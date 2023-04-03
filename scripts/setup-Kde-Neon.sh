@@ -33,7 +33,8 @@ ln -s /media/$(whoami)/Media/Movies/ Videos
 mkdir -p ~/Documents/Media/{Audio,Video,Images}
 mkdir -p ~/Documents/Projects/{Mobile,Web,Desktop,Api}
 mkdir -p ~/Documents/Projects/Mobile/{Android,iOS}
-mkdir -p ~/.tools/sdk/{android,flutter,dart,go}
+mkdir -p ~/Tools/sdk/{android,flutter,dart,go}
+mkdir -p ~/Tools/astudio
 mkdir -p ~/.local/share/{themes,icons}
 
 # Remove all the unnecesary packages from the fresh-install
@@ -82,6 +83,10 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 # https://developer.android.com/studio/run/emulator-acceleration?utm_source=android-studio#vm-linux
 sudo apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 sudo adduser $(whoami) kvm
+
+# Install necessary packages for Flutter Development
+# https://docs.flutter.dev/get-started/install/linux
+sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
 
 # Install necessary apps
 sudo apt install -y kubuntu-restricted-extras git vlc sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk
