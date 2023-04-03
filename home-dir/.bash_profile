@@ -44,6 +44,15 @@ bind '"\e[B":history-search-forward'
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
+# Add Flutter to the executable path : https://docs.flutter.dev/get-started/install/linux
+export PATH="$PATH:$HOME/Tools/sdk/flutter/bin"
+
+# Add GO to the executable path : https://go.dev/doc/install
+export PATH="$PATH:$HOME/Tools/sdk/go/bin"
+
+# Add LazyGit to the executable path : https://github.com/jesseduffield/lazygit
+export PATH="$PATH:$HOME/Tools/lazygit"
+
 #
 # load bashrc file
 #
