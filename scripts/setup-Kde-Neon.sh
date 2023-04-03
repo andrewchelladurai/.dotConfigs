@@ -63,11 +63,20 @@ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 # Download and install the latest release of ActivityWatch Timetracker
 https://github.com/ActivityWatch/activitywatch/releases
 
-# Install Lazygit
+# Install Lazygit : https://github.com/jesseduffield/lazygit
 mkdir -p ~/Tools/lazygit/ && cd ~/Tools/lazygit/
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-tar -xvf lazygit.tar.gz
+tar -xvf lazygit.tar.gz && cd
+
+# Install GitHub CLI : https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+cd Downloads/
+type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
 
 # For Android AVD emulation performance, installl KVM packages for Linux
 # https://developer.android.com/studio/run/emulator-acceleration?utm_source=android-studio#vm-linux
