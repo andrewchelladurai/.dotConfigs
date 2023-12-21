@@ -92,8 +92,7 @@ sudo adduser $(whoami) kvm
 sudo apt-get install -y clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
 
 # Install necessary apps
-sudo apt install -y kubuntu-restricted-extras git sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk krita kompare elisa ktouch kontact zanshin arianna kommit
-
+sudo apt install -y kubuntu-restricted-extras git sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk krita kompare elisa ktouch kontact zanshin arianna kommit btop 
 sudo apt-get install -y --no-install-recommends libreoffice
 
 # Set locale to use 24H time-format
