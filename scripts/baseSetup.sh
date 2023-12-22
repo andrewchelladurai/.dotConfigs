@@ -7,8 +7,9 @@
 sudo apt install stow git
 
 # Download the dotFiles repo & switch to it
-git clone https://github.com/andrewchelladurai/.dotConfigs-KDE-Neon.git
-cd .dotConfigs-KDE-Neon/
+cd ~/ \
+&& git clone https://github.com/andrewchelladurai/.dotFiles.git \
+&& cd .dotFiles/
 
 # Simulate the stowing of the packages and remove the conflicts
 # When all good, restow without the simulation flag [-n]
