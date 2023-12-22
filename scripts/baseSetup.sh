@@ -79,8 +79,7 @@ type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
 && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-&& sudo apt update \
-&& sudo apt install gh -y
+&& sudo apt update
 
 # For Android AVD emulation performance, installl KVM packages for Linux
 # https://developer.android.com/studio/run/emulator-acceleration#vm-linux
@@ -92,7 +91,7 @@ sudo adduser $(whoami) kvm
 sudo apt-get install -y clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
 
 # Install necessary apps
-sudo apt install -y kubuntu-restricted-extras git sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk krita kompare elisa ktouch kontact zanshin arianna kommit btop
+sudo apt install -y kubuntu-restricted-extras git sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk krita kompare elisa ktouch kontact zanshin arianna kommit btop gh
 sudo apt-get install -y --no-install-recommends libreoffice
 
 # Remove unnecessary wallpapers
