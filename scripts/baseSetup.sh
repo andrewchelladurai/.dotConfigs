@@ -100,6 +100,14 @@ cd /usr/share/wallpapers/ && \
 sudo rm -rf ./Canopee/ ./Cascade/ ./Cluster/ ./BytheWater/ ./ColdRipple/ ./ColorfulCups/ ./DarkestHour/ ./Elarun/ ./EveningGlow/ ./FallenLeaf/ ./Flow/ ./FlyingKonqui/ ./Grey/ ./Honeywave/ ./IceCold/ ./Kay/ ./Kite/ ./Kokkini/ ./Opal/ ./PastelHills/ ./summer_1am/ ./Shell/ ./Volna/ && \
 cd ~\
 
+# Install Dracula & Nord theme - Konsole
+# https://draculatheme.com/konsole
+# https://www.nordtheme.com/ports/konsole
+mkdir -p ~/.local/share/konsole/ && \
+cd ~/.local/share/konsole && \
+wget -c https://raw.githubusercontent.com/dracula/konsole/master/Dracula.colorscheme && \
+wget -c https://raw.githubusercontent.com/nordtheme/konsole/develop/src/nord.colorscheme
+
 # This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
 # have'nt observred WiFi drops for quite some time
 # DO not think this is required any more, however keeping it for records sake.
