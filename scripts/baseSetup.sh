@@ -103,11 +103,3 @@ cd ~\
 # have'nt observred WiFi drops for quite some time
 # DO not think this is required any more, however keeping it for records sake.
 # sudo sh -c 'echo "options rtl8723be fwlps=0 swlps=0 ips=0 ant_sel=1" >> /etc/modprobe.d/rtl8723be.conf'
-
-# For bug that shows the extra user on the login screen
-# sudo usermod -u 999 libvirt-qemu
-
-# For manually mounting HDD's by label - Use this in the user profile if needed
-# Was required for ElementaryOs Luna because of a bug
-# Not sure if still needed, keeping for recod's sake
-# udisksctl mount -b /dev/disk/by-label/Data
