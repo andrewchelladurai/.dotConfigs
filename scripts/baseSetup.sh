@@ -98,7 +98,7 @@ sudo apt-get install -y --no-install-recommends libreoffice
 # Remove unnecessary wallpapers
 cd /usr/share/wallpapers/ && \
 sudo rm -rf ./Canopee/ ./Cascade/ ./Cluster/ ./BytheWater/ ./ColdRipple/ ./ColorfulCups/ ./DarkestHour/ ./Elarun/ ./EveningGlow/ ./FallenLeaf/ ./Flow/ ./FlyingKonqui/ ./Grey/ ./Honeywave/ ./IceCold/ ./Kay/ ./Kite/ ./Kokkini/ ./Opal/ ./PastelHills/ ./summer_1am/ ./Shell/ ./Volna/ && \
-cd ~\
+cd ~/
 
 # Install Dracula & Nord theme - Konsole
 # https://draculatheme.com/konsole
@@ -106,7 +106,28 @@ cd ~\
 mkdir -p ~/.local/share/konsole/ && \
 cd ~/.local/share/konsole && \
 wget -c https://raw.githubusercontent.com/dracula/konsole/master/Dracula.colorscheme && \
-wget -c https://raw.githubusercontent.com/nordtheme/konsole/develop/src/nord.colorscheme
+wget -c https://raw.githubusercontent.com/nordtheme/konsole/develop/src/nord.colorscheme && \
+cd ~/
+
+# Install Dracula & Nord theme - .dircolors
+# https://draculatheme.com/dircolors
+# https://www.nordtheme.com/ports/dircolors
+cd /home/andrew/.dotFiles/home-dir && \
+wget -c https://raw.githubusercontent.com/dracula/dircolors/main/.dircolors && \
+mv -v .dircolors .dircolors-dracula && \
+wget -c https://raw.githubusercontent.com/nordtheme/dircolors/develop/src/dir_colors && \
+mv -v dir_colors .dircolors-nord && \
+cd ~/
+
+# Install Dracula & Nord theme - xresources
+# https://draculatheme.com/xresources
+# https://www.nordtheme.com/ports/xresources
+cd /home/andrew/.dotFiles/home-dir && \
+wget -c https://raw.githubusercontent.com/dracula/xresources/master/Xresources && \
+mv -v Xresources Xresources-dracula && \
+wget -c https://raw.githubusercontent.com/nordtheme/xresources/develop/src/nord && \
+mv -v nord Xresources-nord && \
+cd ~/
 
 # This is for a Wifi Card Bug on HP Pavilion Notebook AB219TX (N8L68PA#ACJ)
 # have'nt observred WiFi drops for quite some time
