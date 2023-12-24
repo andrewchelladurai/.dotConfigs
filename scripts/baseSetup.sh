@@ -18,6 +18,10 @@ stow -nvR home-dir/ config-dir/
 # Reload the modifications or open a terminal to load the new .bashrc file
 source ~/.bashrc
 
+##
+## File and Folder rearrangement
+##
+
 # Remove unnecessary folders
 rm -rf ~/Documents/ ~/Downloads/ ~/Pictures/ ~/Videos/ ~/Music/
 
@@ -33,6 +37,10 @@ ln -s /media/$(whoami)/Media/Music/ Music
 ln -s /media/$(whoami)/Media/Pictures/ Pictures
 ln -s /media/$(whoami)/Media/Movies/ Videos
 
+##
+## Remove & Install Packages
+##
+
 # For capability to add PPA repositories
 sudo apt install -y software-properties-common software-properties-qt
 
@@ -42,8 +50,16 @@ sudo ubuntu-drivers autoinstall
 # Remove all the unnecessary packages from the fresh-install
 sudo apt purge -y plasma-discover-common plasma-vault plasma-wallpapers-addons plasma-welcome plasma-firewall plasma-runners-addons plasma-widgets-addons ark firefox khelpcenter kwalletmanager vim-common kate vlc
 
-# Now do a dist-upgrade
+# Perform a system upgrade.
 upgradesys
+
+# Install necessary apps
+sudo apt install -y kubuntu-restricted-extras git sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk krita kompare elisa ktouch kontact zanshin arianna kommit btop gh
+sudo apt-get install -y --no-install-recommends libreoffice
+
+##
+## Install Packages NOT in default repos
+##
 
 # Install Google Chrome
 # https://support.google.com/chrome/answer/95346
@@ -82,6 +98,10 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
 && sudo apt update
 
+##
+## Install necessary packages for Dev work.
+##
+
 # For Android AVD emulation performance, installl KVM packages for Linux
 # https://developer.android.com/studio/run/emulator-acceleration#vm-linux
 sudo apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
@@ -91,9 +111,9 @@ sudo adduser $(whoami) kvm
 # https://docs.flutter.dev/get-started/install/linux#linux-prerequisites
 sudo apt-get install -y clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
 
-# Install necessary apps
-sudo apt install -y kubuntu-restricted-extras git sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk krita kompare elisa ktouch kontact zanshin arianna kommit btop gh
-sudo apt-get install -y --no-install-recommends libreoffice
+##
+## Update system Look & Feel
+##
 
 # Remove unnecessary wallpapers
 cd /usr/share/wallpapers/ && \
