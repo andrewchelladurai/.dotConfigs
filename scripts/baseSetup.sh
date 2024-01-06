@@ -7,9 +7,9 @@
 sudo apt install stow git
 
 # Download the dotFiles repo & switch to it
-cd ~/ \
-&& git clone https://github.com/andrewchelladurai/.dotFiles.git \
-&& cd .dotFiles/
+cd ~/ && \
+git clone https://github.com/andrewchelladurai/.dotFiles.git && \
+cd .dotFiles/
 
 # Simulate the stowing of the packages and remove the conflicts
 # When all good, restow without the simulation flag [-n]
@@ -128,6 +128,7 @@ cd ~/.local/share/konsole && \
 wget -c https://raw.githubusercontent.com/dracula/konsole/master/Dracula.colorscheme && \
 wget -c https://raw.githubusercontent.com/nordtheme/konsole/develop/src/nord.colorscheme && \
 cd ~/
+
 
 # Install Dracula & Nord theme - .dircolors
 # https://draculatheme.com/dircolors
