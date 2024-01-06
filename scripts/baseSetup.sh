@@ -54,7 +54,7 @@ sudo apt purge -y plasma-discover-common plasma-vault plasma-wallpapers-addons p
 upgradesys
 
 # Install necessary apps
-sudo apt install -y kubuntu-restricted-extras git sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk elisa btop gh
+sudo apt install -y kubuntu-restricted-extras git sqlite filelight krita google-chrome-stable enpass digikam wireguard neovim default-jdk elisa dragonplayer btop gh
 sudo apt-get install -y --no-install-recommends libreoffice
 
 ##
@@ -101,6 +101,11 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 ##
 ## Install necessary packages for Dev work.
 ##
+
+# Android
+# Download the latest Android Studio : https://developer.android.com/studio
+cd ~/Documents/Tools/ &&
+tar -xvf android-studio*linux.tar.gz
 
 # For Android AVD emulation performance, installl KVM packages for Linux
 # https://developer.android.com/studio/run/emulator-acceleration#vm-linux
