@@ -54,7 +54,7 @@ sudo apt purge -y plasma-discover-common plasma-vault plasma-wallpapers-addons p
 upgradesys
 
 # Install necessary apps
-sudo apt install -y kubuntu-restricted-extras git sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk krita kompare elisa ktouch kontact zanshin arianna kommit btop gh
+sudo apt install -y kubuntu-restricted-extras git sqlite filelight gimp google-chrome-stable enpass inkscape digikam wireguard neovim default-jdk elisa btop gh
 sudo apt-get install -y --no-install-recommends libreoffice
 
 ##
