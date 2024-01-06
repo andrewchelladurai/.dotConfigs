@@ -103,18 +103,30 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 ##
 
 # Android
-# Download the latest Android Studio : https://developer.android.com/studio
+# https://developer.android.com/studio
 cd ~/Documents/Tools/ &&
 tar -xvf android-studio*linux.tar.gz
 
-# For Android AVD emulation performance, installl KVM packages for Linux
+# For Android AVD emulation performance, install KVM packages for Linux
 # https://developer.android.com/studio/run/emulator-acceleration#vm-linux
-sudo apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+sudo apt-get install qemu-system-x86 libvirt-daemon-system libvirt-clients bridge-utils && \
 sudo adduser $(whoami) kvm
 
-# Install necessary packages for Flutter Development
+# Dart
+# https://dart.dev/get-dart#install
+sudo apt-get install apt-transport-https && \
+wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/dart.gpg && \
+echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | sudo tee /etc/apt/sources.list.d/dart_stable.list && \
+sudo apt-get update && \
+sudo apt-get install dart
+
+# Flutter
 # https://docs.flutter.dev/get-started/install/linux#linux-prerequisites
 sudo apt-get install -y clang cmake git ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
+
+# GoLang
+# https://go.dev/doc/install
+
 
 ##
 ## Update system Look & Feel
