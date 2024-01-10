@@ -7,8 +7,8 @@
 # [[ -e ~/.bash_aliases ]] && . ~/.bash_aliases
 #
 
-# This is for debian based systems
-alias upgradesys='sudo pkcon refresh && sudo pkcon -y update ; sudo apt autoremove -y && sudo apt autoclean -y'
+# Remove unused packages & do full system upgrade 
+alias upgradesys='sudo pacman -Qtdq | sudo pacman -Rns - ; sudo pacman -Syu && yay'
 
 # restart networkmanager service using system control
 alias restartNMW='sudo systemctl restart network-manager'
