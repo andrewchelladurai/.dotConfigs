@@ -1,5 +1,5 @@
 # configs
 
-This is the repo for config files of tools I use on the [KDE Neon Linux machine](https://neon.kde.org/)
+This is the repo of config files & tools I use on my [Endeavour OS KDE Flavour Linux machine](https://endeavouros.com/)
 
-Useful for getting back my setups after each distro hop or clean-install.
+It's useful for getting back my setups after each distro hop or a clean-install.
