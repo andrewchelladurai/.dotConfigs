@@ -57,7 +57,7 @@ sudo pacman -Rdd v4l-utils qt5-tools
 upgradesys
 
 # Install necessary apps from main repo
-sudo pacman -Syu git sqlite filelight krita digikam neovim elisa btop github-cli dragon oxygen
+sudo pacman -Syu git sqlite filelight krita digikam neovim elisa btop github-cli dragon oxygen ttf-jetbrains-mono-nerd ttf-hack-nerd ttf-sourcecodepro-nerd
 
 # Install necessary apps from AUR repo
 yay -Syu google-chrome enpass-bin lazygit syncthing unified-remote-server android-studio
