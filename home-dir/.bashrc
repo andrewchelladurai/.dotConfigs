@@ -10,9 +10,6 @@
 # If I am root then return immediately and do not continue.
 [[ "$(whoami)" = "root" ]] && return
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 # https://draculatheme.com/tty
 if [ "$TERM" = "linux" ]; then
 	printf %b '\e[40m' '\e[8]' # set default background to color 0 'dracula-bg'
@@ -35,6 +32,9 @@ if [ "$TERM" = "linux" ]; then
 	printf %b '\e]PFffffff'    # redefine 'bright-white'   as '#ffffff'
 	clear
 fi
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
