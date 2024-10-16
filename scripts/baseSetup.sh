@@ -1,22 +1,6 @@
 #
-# For [Arch Linux] (https://archlinux.org/) Based Distros (KDE Specific)
-# Preferred Distro : [Endeavour OS] (https://endeavouros.com/)
+# For [KDE Neon] (https://neon.kde.org/
 #
-
-# Install necessary initial packages
-sudo pacman -S stow git
-
-# Download the dotFiles repo & switch to it
-cd ~/ && \
-git clone https://github.com/andrewchelladurai/.dotFiles.git && \
-cd .dotFiles/
-
-# Simulate the stowing of the packages and remove the conflicts
-# When all good, restow without the simulation flag [-n]
-stow -nvR home-dir/ config-dir/
-
-# Reload the modifications or open a terminal to load the new .bashrc file
-source ~/.bashrc
 
 ##
 ## File and Folder rearrangement
@@ -37,30 +21,81 @@ ln -s /media/$(whoami)/Media/Music/ Music
 ln -s /media/$(whoami)/Media/Pictures/ Pictures
 ln -s /media/$(whoami)/Media/Movies/ Videos
 
+# Install prerequisite packages
+sudo pkcon install -y stow git
+
+# Download the dotFiles repo & switch to it
+cd ~/ && \
+git clone https://github.com/andrewchelladurai/.dotFiles.git && \
+cd .dotFiles/
+
+# Simulate the stowing of the packages and remove the conflicts
+# When all good, restow without the simulation flag [-n]
+stow -nvR home-dir/ config-dir/
+
+# Reload the modifications or open a terminal to load the new .bashrc file
+source ~/.bashrc
+
 ##
 ## Remove & Install Packages
 ##
 
 ## Install Nvidia Drivers for current Laptop
-sudo pacman -S nvidia-inst && \
-nvidia-inst && \
-sudo pacman -Rns nvidia-inst
+sudo ubuntu-drivers autoinstall
 
 # Remove all the unnecessary packages from the fresh-install
-sudo pacman -Rns stoken meld haruna mpv ark file-roller firewalld glances nano-syntax-highlighting openconnect networkmanager-openconnect inxi plasma-disks kdeplasma-addons firefox vi kate hwinfo
-# Remove EndeavourOS Packages
-sudo pacman -Rns endeavouros-theming eos-plasma-sddm-config eos-qogir-icons eos-settings-plasma eos-apps-info eos-log-tool eos-quickstart reflector reflector-simple welcome eos-bash-shared eos-rankmirrors eos-update-notifier
-# Remove package BUT NOT the depedencies
-sudo pacman -Rdd v4l-utils qt5-tools
+sudo apt remove -y ark plasma-disks firefox vim kate mpv anthy khelpcenter kwalletmanager plasma-vault plasma-wallpapers-addons plasma-welcome plasma-firewall 
 
 # Perform a system upgrade.
 upgradesys
 
-# Install necessary apps from main repo
-sudo pacman -Syu git sqlite filelight krita digikam neovim elisa btop github-cli dragon oxygen ttf-jetbrains-mono-nerd ttf-hack-nerd ttf-sourcecodepro-nerd
+# Install Github Client
+# https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+(type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
+	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
+	&& wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+	&& sudo apt update \
+	&& sudo apt install gh -y
 
-# Install necessary apps from AUR repo
-yay -Syu google-chrome enpass-bin lazygit syncthing unified-remote-server android-studio
+# Install Google Chrome
+cd ~/Documents/Others \
+&& wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+&& sudo dpkg -i google-chrome-stable_current_amd64.deb \
+&& rm google-chrome-stable_current_amd64.deb
+
+# Install Enpass Password Manager
+# https://support.enpass.io/app/getting_started/installing_enpass.htm
+echo "deb https://apt.enpass.io/  stable main" | sudo tee /etc/apt/sources.list.d/enpass.list \
+&& wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc \
+&& sudo apt-get update \
+&& sudo apt-get install -y enpass
+
+# Install LazyGit
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*') \
+&& curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" \
+&& tar xf lazygit.tar.gz lazygit \
+&& sudo install lazygit /usr/local/bin \
+&& lazygit --version
+# Uninstall LazyGit
+rm -rf /usr/local/bin/lazygit
+git config --global user.name "Andrew Chelladurai"
+git config --global user.email "theunknownandrew@gmail.com"
+
+# Install Android Studio
+# https://developer.android.com/studio
+cd ~/Documents/Tools/
+
+# Install Unified Remote Server
+# https://www.unifiedremote.com/download/other#linux
+cd ~/Documents/Others \
+&& wget -c https://www.unifiedremote.com/download/linux-x64-deb \
+&& sudo dpkg -i linux-x64-deb \
+&& rm linux-x64-deb
+
+# Install necessary apps from main repo
+sudo apt install -y sqlite filelight krita digikam neovim elisa btop gimp
 
 ##
 ## Install necessary packages for Dev work.
@@ -73,12 +108,12 @@ tar -xvf android-studio*linux.tar.gz
 
 # For Android AVD emulation performance, install KVM packages for Linux
 # https://developer.android.com/studio/run/emulator-acceleration#vm-linux
-sudo apt-get install qemu-system-x86 libvirt-daemon-system libvirt-clients bridge-utils && \
+sudo apt-get install -y qemu-system-x86 libvirt-daemon-system libvirt-clients bridge-utils && \
 sudo adduser $(whoami) kvm
 
 # Dart
 # https://dart.dev/get-dart#install
-sudo apt-get install apt-transport-https && \
+sudo apt-get install -y apt-transport-https && \
 wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/dart.gpg && \
 echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | sudo tee /etc/apt/sources.list.d/dart_stable.list && \
 sudo apt-get update && \
@@ -135,3 +170,4 @@ cd ~/
 # have'nt observred WiFi drops for quite some time
 # DO not think this is required any more, however keeping it for records sake.
 # sudo sh -c 'echo "options rtl8723be fwlps=0 swlps=0 ips=0 ant_sel=1" >> /etc/modprobe.d/rtl8723be.conf'
+
