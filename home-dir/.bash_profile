@@ -2,10 +2,10 @@
 
 #
 # https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_01.html
-# Should be present at location ~/.config/.bash_profile
+# Should be present at location ~/.bash_profile
 #
 
-# update default editor for all commands to use neo-vim
+# update default editor for all commands to use NeoVim
 # https://bash.cyberciti.biz/guide/$VISUAL_vs._$EDITOR_variable_%E2%80%93_what_is_the_difference%3F
 export VISUAL=nvim
 export EDITOR="$VISUAL"
@@ -37,8 +37,8 @@ PROMPT_COMMAND='history -a'
 
 ## Use the up and down arrow keys for finding a command in history
 ## (you can write some initial letters of the command first).
-bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
+# bind '"\e[A":history-search-backward'
+# bind '"\e[B":history-search-forward'
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
