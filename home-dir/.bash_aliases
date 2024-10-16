@@ -8,7 +8,7 @@
 #
 
 # Remove unused packages & do full system upgrade 
-alias upgradesys='sudo pacman -Qtdq | sudo pacman -Rns - ; sudo pacman -Syu && yay'
+alias upgradesys='sudo pkcon refresh && sudo pkcon update'
 
 # restart networkmanager service using system control
 alias restartNMW='sudo systemctl restart network-manager'
@@ -76,6 +76,6 @@ alias wget='wget -c'
 alias scrcpy='scrcpy --turn-screen-off --stay-awake'
 
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
+# Add an "alert" alias for long running commands.
+# Use like so: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
